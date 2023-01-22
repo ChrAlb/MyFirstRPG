@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1617,7 +1617,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      5_waterfall_63: -958030395
+      5_waterfall_1: 1075624068
       5_waterfall_64: -355400267
       5_waterfall_66: -2032081530
       5_waterfall_38: -766869325
@@ -1682,10 +1682,10 @@ TextureImporter:
       5_waterfall_67: 750794399
       5_waterfall_23: 1422240082
       5_waterfall_70: 820706948
-      5_waterfall_1: 1075624068
       5_waterfall_20: 221073041
-      5_waterfall_36: -918957610
       5_waterfall_24: 52266801
+      5_waterfall_36: -918957610
+      5_waterfall_63: -958030395
       5_waterfall_37: 7319656
       5_waterfall_48: 1793059029
   spritePackingTag: 

@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -2719,18 +2719,18 @@ TextureImporter:
       4_buildings_15: -461479105
       4_buildings_110: 211885532
       4_buildings_16: 1839291631
-      4_buildings_30: 425085689
       4_buildings_97: -476192644
-      4_buildings_36: -1574794951
       4_buildings_100: -1826847151
+      4_buildings_36: -1574794951
+      4_buildings_30: 425085689
       4_buildings_53: -1922285604
       4_buildings_89: -521019836
       4_buildings_83: -807644881
       4_buildings_101: -363807220
       4_buildings_2: -273962168
+      4_buildings_114: -1429687640
       4_buildings_108: -1150428128
       4_buildings_75: -1362546816
-      4_buildings_114: -1429687640
       4_buildings_117: 1979723544
       4_buildings_87: 2053799747
       4_buildings_64: -489660280
