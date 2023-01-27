@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private Vector3 bottomLeftEdge;
     private Vector3 topRightEdge;
 
-    
+    public bool deactivateMovement = false;
     
     // Start is called before the first frame update
     void Start()
@@ -44,15 +44,27 @@ public class Player : MonoBehaviour
         float horizontalMovement = Input.GetAxisRaw("Horizontal");
         float verticalMovement = Input.GetAxisRaw("Vertical");
 
-        playerRigidBody.velocity = new Vector2(horizontalMovement,verticalMovement) * playerSpeed;
+        if (deactivateMovement)
+        {
+            playerRigidBody.velocity = Vector2.zero;
+        }
+        else
+        {
+            playerRigidBody.velocity = new Vector2(horizontalMovement, verticalMovement) * playerSpeed;
+        }
 
         playerAnimator.SetFloat("movementX", playerRigidBody.velocity.x) ;
         playerAnimator.SetFloat("movementY", playerRigidBody.velocity.y);
 
         if (horizontalMovement == 1 || horizontalMovement == -1 || verticalMovement == 1 || verticalMovement == -1 )
         {
-            playerAnimator.SetFloat("lastX", horizontalMovement);
-            playerAnimator.SetFloat("lastY", verticalMovement);
+           if(!deactivateMovement)
+            {
+              playerAnimator.SetFloat("lastX", horizontalMovement);
+              playerAnimator.SetFloat("lastY", verticalMovement);
+            }
+            
+            
         }
 
         transform.position = new Vector3(
