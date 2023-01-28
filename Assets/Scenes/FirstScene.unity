@@ -270,6 +270,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &544301026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1413213098869546529, guid: 4569cc5a676cad94b9b6f7a5d8fca9d8, type: 3}
+  m_PrefabInstance: {fileID: 1413213099108499680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &544301032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544301026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038efbea084c9a54a97baf32deffcd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerName: Jimmy
+  maxLevel: 20
+  playerLevel: 36
+  currentXP: 0
+  maxHP: 100
+  currentHP: 0
+  xpForEachLevel: 
+  baseLevelXP: 100
+  maxMana: 30
+  currentMana: 0
+  dexterity: 10
+  defence: 30
 --- !u!1 &579079711 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4238641763228465172, guid: f170baa5871ab51418d0b81343113b45, type: 3}
@@ -398,10 +427,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
+  - '#Healer'
   - Hey, I'm a healer
+  - '#Jimmy'
   - Hey, I'm a demon
   - called Jimmy
   - I've come for your sould
+  - '#Healer'
   - Why are you so mean, Jimmy
   - You seem to be nice
 --- !u!61 &780274011
@@ -1142,7 +1174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1152538265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1150,19 +1182,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152538264}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15945734, y: 0.15275608, z: 0.19397597}
+  m_LocalScale: {x: 0.39336592, y: 0.37683448, z: 0.47851992}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1334592377}
-  m_Father: {fileID: 107113310}
-  m_RootOrder: 2
+  m_Father: {fileID: 1357513031}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -524, y: -313}
-  m_SizeDelta: {x: 2524.668, y: -727.024}
+  m_AnchoredPosition: {x: -1344.9434, y: 298.4779}
+  m_SizeDelta: {x: 0, y: 0.00012207031}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1152538266
 MonoBehaviour:
@@ -1368,6 +1400,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1709391667}
+  - {fileID: 1152538265}
   m_Father: {fileID: 107113310}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
