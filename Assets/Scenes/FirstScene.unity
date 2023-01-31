@@ -289,11 +289,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerName: Jimmy
   maxLevel: 20
-  playerLevel: 36
+  playerLevel: 1
   currentXP: 0
   maxHP: 100
   currentHP: 0
-  xpForEachLevel: 
+  xpForNextLevel: 
   baseLevelXP: 100
   maxMana: 30
   currentMana: 0
@@ -340,6 +340,7 @@ GameObject:
   - component: {fileID: 780274012}
   - component: {fileID: 780274011}
   - component: {fileID: 780274010}
+  - component: {fileID: 780274013}
   m_Layer: 0
   m_Name: Healer NPC
   m_TagString: Untagged
@@ -488,6 +489,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.125}
   m_EdgeRadius: 0
+--- !u!114 &780274013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780274007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038efbea084c9a54a97baf32deffcd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerName: Sara
+  maxLevel: 50
+  playerLevel: 1
+  currentXP: 100
+  maxHP: 100
+  currentHP: 0
+  xpForNextLevel: 
+  baseLevelXP: 100
+  maxMana: 30
+  currentMana: 0
+  dexterity: 2
+  defence: 7
 --- !u!1 &787940259 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5147148910900720474, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
@@ -520,6 +545,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c24819052b690a647b9e8f6d20a4bebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &969733458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 969733460}
+  - component: {fileID: 969733459}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &969733459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969733458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322a8139d84b4d74ea6d7115ab4d524f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStats: []
+--- !u!4 &969733460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969733458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1012349200 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100473591486069991, guid: cd78223f2b713cf458a84670e91093e3, type: 3}
