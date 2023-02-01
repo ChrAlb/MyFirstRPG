@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] Image imageToFade;
+    [SerializeField] GameObject menu;
 
     public static MenuManager Instance;
 
@@ -15,5 +16,20 @@ public class MenuManager : MonoBehaviour
         imageToFade.GetComponent<Animator>().SetTrigger("StartFading");
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            if (menu.activeInHierarchy)
+            {
+                menu.SetActive(false);
+            }
+            else
+            {
+                menu.SetActive(true);
+            }
+        }
 
+
+    }
 }
