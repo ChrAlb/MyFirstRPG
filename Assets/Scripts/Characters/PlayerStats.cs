@@ -5,22 +5,22 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    [SerializeField] string PlayerName;
+    public string PlayerName;
 
-    [SerializeField] Sprite characterImage;
+    public Sprite characterImage;
 
     [SerializeField] int maxLevel = 20;
-    [SerializeField] int playerLevel = 1;
-    [SerializeField] int currentXP;
+    public int playerLevel = 1;
+    public int currentXP;
 
-    [SerializeField] int maxHP = 100;
-    [SerializeField] int currentHP;
+    public int maxHP = 100;
+    public int currentHP;
 
-    [SerializeField] int[] xpForNextLevel;
+    public int[] xpForNextLevel;
     [SerializeField] int baseLevelXP = 100;
 
-    [SerializeField] int maxMana = 30;
-    [SerializeField] int currentMana;
+    public int maxMana = 30;
+    public int currentMana;
 
     [SerializeField] int dexterity;
     [SerializeField] int defence;

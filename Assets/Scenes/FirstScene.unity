@@ -349,7 +349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &182673885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1523,7 +1523,7 @@ MonoBehaviour:
   characterImage: {fileID: 2074372208, guid: 0ed6fb9da572ec34ebd74f218f3bade9, type: 3}
   maxLevel: 20
   playerLevel: 1
-  currentXP: 0
+  currentXP: 30
   maxHP: 100
   currentHP: 0
   xpForNextLevel: 
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   characterImage: {fileID: 254726261, guid: 139ff2aa612c28644ae066d4f95a4028, type: 3}
   maxLevel: 50
   playerLevel: 1
-  currentXP: 100
+  currentXP: 0
   maxHP: 100
   currentHP: 0
   xpForNextLevel: 
@@ -3945,8 +3945,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -666.2668, y: 12}
-  m_SizeDelta: {x: 298.4859, y: 232.6235}
+  m_AnchoredPosition: {x: -675.90326, y: 2}
+  m_SizeDelta: {x: 150.0334, y: 154.0856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131934891
 MonoBehaviour:
@@ -5558,7 +5558,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1647041326
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7281,9 +7281,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1443228037}
     - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: currentXPtext.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: characterImage.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
       propertyPath: characterPanel.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: currentXPtext.Array.data[0]
+      value: 
+      objectReference: {fileID: 1530353046}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: currentXPtext.Array.data[1]
+      value: 
+      objectReference: {fileID: 602058744}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: currentXPtext.Array.data[2]
+      value: 
+      objectReference: {fileID: 313523863}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: characterImage.Array.data[0]
+      value: 
+      objectReference: {fileID: 1915430699}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: characterImage.Array.data[1]
+      value: 
+      objectReference: {fileID: 1131934891}
+    - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: characterImage.Array.data[2]
+      value: 
+      objectReference: {fileID: 1443228037}
     - target: {fileID: 4238641763228465183, guid: f170baa5871ab51418d0b81343113b45, type: 3}
       propertyPath: characterPanel.Array.data[0]
       value: 
