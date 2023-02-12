@@ -19,6 +19,10 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Image[] characterImage;
     [SerializeField] GameObject[] characterPanel;
 
+    public void QuitGame()
+    {
+        Application.Quit(); 
+    }
     
     public void FadeImage()
     {
@@ -40,7 +44,7 @@ public class MenuManager : MonoBehaviour
             }
             else
             {
-                UpdateStats(); // Hier in korrigiert
+                UpdateStats(); // Hierhin korrigiert
                 menu.SetActive(true);
                 GameManager.instance.gameMenuOpened = true;
             }
