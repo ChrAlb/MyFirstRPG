@@ -14,17 +14,18 @@ public class Inventory : MonoBehaviour
         instance = this;
         
         itemsList = new List<ItemsManager>();
-        Debug.Log("Hey a new Inventory has been created");
+        //Debug.Log("Hey a new Inventory has been created");
     }
 
-    // Update is called once per frame
-    void Update()
+   public List<ItemsManager> GetItemList()
     {
-        
+        return itemsList;
     }
 
     public void AddItems(ItemsManager item)
     {
+        print(item.itemName + " has been added to inventory");
         itemsList.Add(item);
+        print(itemsList.Count); 
     }
 }

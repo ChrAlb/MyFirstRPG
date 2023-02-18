@@ -12,6 +12,9 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] GameObject[] statsButtons;
 
+    [SerializeField] GameObject itemSlotContainer;
+    [SerializeField] Transform itemSlotContainerParent;
+
     public static MenuManager Instance;
 
     private PlayerStats[] playerStats;
@@ -101,6 +104,21 @@ public class MenuManager : MonoBehaviour
         statDef.text = playerSelected.defence.ToString();
 
         characterStatImage.sprite = playerSelected.characterImage;
+    }
+
+    public void UpdateItemInventory()
+    {
+        /*
+        foreach (ItemsManager item in Inventory.instance.GetItemList())
+        {
+            Destroy(itemSlotContainer.gameObject);
+
+        }
+        */
+        foreach (ItemsManager item in Inventory.instance.GetItemList())
+        {
+            RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
+        }
     }
 
     public void QuitGame()
