@@ -108,16 +108,28 @@ public class MenuManager : MonoBehaviour
 
     public void UpdateItemInventory()
     {
-        /*
-        foreach (ItemsManager item in Inventory.instance.GetItemList())
-        {
-            Destroy(itemSlotContainer.gameObject);
 
+        bool firstItem = true;
+        
+        foreach (Transform itemSlot in itemSlotContainerParent)
+        {
+        if (firstItem)
+            {
+                firstItem = false;
+            } else
+            {
+                Destroy(itemSlot.gameObject);
+            }
+            
         }
-        */
+            
+        
         foreach (ItemsManager item in Inventory.instance.GetItemList())
         {
             RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
+
+            Image itemImage = itemSlot.Find("Image").GetComponent<Image>();
+            itemImage.sprite = item.itemsImage;
         }
     }
 
