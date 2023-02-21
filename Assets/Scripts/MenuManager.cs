@@ -114,9 +114,9 @@ public class MenuManager : MonoBehaviour
         foreach (Transform itemSlot in itemSlotContainerParent)
         {
         if (firstItem)
-            {
+            {  
                 firstItem = false;
-            } else
+            } else   
             {
                 Destroy(itemSlot.gameObject);
             }
@@ -130,9 +130,15 @@ public class MenuManager : MonoBehaviour
 
             Image itemImage = itemSlot.Find("Image").GetComponent<Image>();
             itemImage.sprite = item.itemsImage;
+
+            TextMeshProUGUI itemsamountText = itemSlot.Find("Amount Text").GetComponent<TextMeshProUGUI>();
+            if (item.amount > 1)
+                itemsamountText.text = item.amount.ToString();
+            else
+                itemsamountText.text = "";
         }
     }
-
+ 
     public void QuitGame()
     {
         Application.Quit();
