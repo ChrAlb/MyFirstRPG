@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3156752742975369599}
   - component: {fileID: 7440108720354227245}
   - component: {fileID: 7290293388973544549}
+  - component: {fileID: 1851110721287545749}
   m_Layer: 5
   m_Name: Items Button
   m_TagString: Untagged
@@ -122,7 +123,32 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7440108720354227245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1851110721287545749}
+        m_TargetAssemblyTypeName: ItemButton, Assembly-CSharp
+        m_MethodName: Press
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1851110721287545749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161677318452988083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a37f60c47537604f8255504bb811df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemOnButton: {fileID: 0}
 --- !u!1 &3491206950338933306
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +237,7 @@ GameObject:
   - component: {fileID: 2866617125601336971}
   - component: {fileID: 3629119604170055012}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Amount Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +301,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0.047169805, g: 0.046502307, b: 0.046502307, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

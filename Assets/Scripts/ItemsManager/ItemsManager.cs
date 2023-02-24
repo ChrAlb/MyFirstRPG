@@ -24,18 +24,20 @@ public class ItemsManager : MonoBehaviour
     public int amount;
 
 
-    // Start is called before the first frame update
-    void Start()
+    public void UseItem()
     {
-        
+        if (itemType == ItemType.Item)
+        {
+            if(affectType == AffectType.HP)
+            {
+                PlayerStats.instance.AddHP(amountOfAffect);
+            }
+            else if (affectType == AffectType.Mana)
+            {
+                PlayerStats.instance.AddMana(amountOfAffect);
+            }
+        } 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -49,6 +51,6 @@ public class ItemsManager : MonoBehaviour
 
     public void SelfDestroy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
