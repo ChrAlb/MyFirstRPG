@@ -27,6 +27,14 @@ public class PlayerStats : MonoBehaviour
     public int dexterity;
     public int defence;
 
+    public string equippedWeaponName;
+    public string equippedArmorName;
+
+    public int weaponPower;
+    public int armorDefence;
+
+    public ItemsManager equipedWeapon, equipedArmor;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,5 +106,19 @@ public class PlayerStats : MonoBehaviour
         {
             maxMana = currentMana;
         }
+    }
+
+    public void EquipWeapon (ItemsManager weaponToEquip)
+    {
+        equipedWeapon = weaponToEquip;
+        equippedWeaponName = equipedWeapon.itemName;
+        weaponPower = equipedWeapon.weaponDexterity;
+    }
+    
+    public void EquipEquipArmorn (ItemsManager armorToEquip)
+    {
+        equipedArmor = armorToEquip;
+        equippedArmorName = equipedArmor.itemName;
+        armorDefence = equipedArmor.armorDefense;
     }
 }

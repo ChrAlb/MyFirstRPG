@@ -24,19 +24,44 @@ public class ItemsManager : MonoBehaviour
     public int amount;
 
 
-    public void UseItem()
+    public void UseItem(int characterToUseOn)
     {
+        PlayerStats selectedCharacter = GameManager.instance.GetPlayerStats()[characterToUseOn];
+        
         if (itemType == ItemType.Item)
         {
             if(affectType == AffectType.HP)
             {
-                PlayerStats.instance.AddHP(amountOfAffect);
+                selectedCharacter.AddHP(amountOfAffect);
             }
             else if (affectType == AffectType.Mana)
             {
-                PlayerStats.instance.AddMana(amountOfAffect);
+                selectedCharacter.AddMana(amountOfAffect);
             }
-        } 
+        }
+        else
+        {
+            if (itemType == ItemType.Weapon)
+            {
+                if(selectedCharacter.equippedWeaponName != "")
+                {
+                    Inventory.instance.AddItems(selectedCharacter.equipedWeapon);
+                }
+
+                selectedCharacter.EquipWeapon(this);
+            }
+            else if (itemType == ItemType.Armor)
+
+            {
+                if (selectedCharacter.equippedArmorName != "")
+                {
+                    Inventory.instance.AddItems(selectedCharacter.equipedArmor);
+                }
+
+                selectedCharacter.EquipEquipArmorn(this);
+
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

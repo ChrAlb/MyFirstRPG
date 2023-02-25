@@ -23,7 +23,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] Image[] characterImage;
     [SerializeField] GameObject[] characterPanel;
 
-    [SerializeField] TextMeshProUGUI statName, statHP, statMana, statDex, statDef;
+    [SerializeField] TextMeshProUGUI statName, statHP, statMana, statDex, statDef, statEquipedWeapons, statequipedArmour;
+    [SerializeField] TextMeshProUGUI statWeaponPower, statArmorDefence;
     [SerializeField] Image characterStatImage;
 
     public TextMeshProUGUI itemName, itemDescription;
@@ -111,6 +112,12 @@ public class MenuManager : MonoBehaviour
         statDef.text = playerSelected.defence.ToString();
 
         characterStatImage.sprite = playerSelected.characterImage;
+
+        statEquipedWeapons.text = playerSelected.equippedWeaponName;
+        statArmorDefence.text = playerSelected.equippedArmorName;
+
+        statWeaponPower.text = playerSelected.weaponPower.ToString();
+        statArmorDefence.text = playerSelected.armorDefence.ToString();
     }
 
     public void UpdateItemInventory()
@@ -149,9 +156,9 @@ public class MenuManager : MonoBehaviour
         UpdateItemInventory();
     }
 
-    public void UseItem()
+    public void UseItem(int selectedCharacter)
     {
-        activeItem.UseItem();
+        activeItem.UseItem(selectedCharacter);
         OpenCharacterChoicePanel();
         DiscardItem();   // This should be moved!!
     }

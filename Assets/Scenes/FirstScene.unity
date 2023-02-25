@@ -418,7 +418,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 292926204}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: UseItem
+        m_MethodName: OpenCharacterChoicePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -639,6 +639,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7412053385244814419, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
   m_PrefabInstance: {fileID: 7412053384887528219}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &525389065 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4304522028775646917, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+  m_PrefabInstance: {fileID: 4304522030390275989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &544301026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1413213098869546529, guid: 4569cc5a676cad94b9b6f7a5d8fca9d8, type: 3}
@@ -669,6 +680,12 @@ MonoBehaviour:
   currentMana: 0
   dexterity: 10
   defence: 30
+  equippedWeaponName: 
+  equippedArmorName: 
+  weaponPower: 0
+  armorDefence: 0
+  equipedWeapon: {fileID: 0}
+  equipedArmor: {fileID: 0}
 --- !u!1 &647617840
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,11 +956,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654438713}
   m_CullTransparentMesh: 1
---- !u!1 &668178016 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4304522029226994339, guid: f170baa5871ab51418d0b81343113b45, type: 3}
-  m_PrefabInstance: {fileID: 4304522030390275989}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &689396743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1091,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689396743}
   m_CullTransparentMesh: 1
+--- !u!114 &703285153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4304522030121349503, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+  m_PrefabInstance: {fileID: 4304522030390275989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &747632518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5249752399281744634, guid: b7a52a3bd44174c4ea7b4526b14f9f31, type: 3}
@@ -1408,6 +1431,12 @@ MonoBehaviour:
   currentMana: 0
   dexterity: 2
   defence: 7
+  equippedWeaponName: 
+  equippedArmorName: 
+  weaponPower: 0
+  armorDefence: 0
+  equipedWeapon: {fileID: 0}
+  equipedArmor: {fileID: 0}
 --- !u!1 &787940259 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5147148910900720474, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
@@ -2679,34 +2708,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 668178016}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 292926204}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 292926204}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: UpdateItemInventory
+        m_MethodName: CloseCharacterPanel
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1216615322}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3268,6 +3285,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4304522029226994338, guid: f170baa5871ab51418d0b81343113b45, type: 3}
   m_PrefabInstance: {fileID: 4304522030390275989}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1698714250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4304522029937833651, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+  m_PrefabInstance: {fileID: 4304522030390275989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1698763539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,34 +3380,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 668178016}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 292926204}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 292926204}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: UpdateItemInventory
+        m_MethodName: CloseCharacterPanel
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1216615322}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3561,6 +3577,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714358836}
   m_CullTransparentMesh: 1
+--- !u!114 &1807099698 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4304522029697092994, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+  m_PrefabInstance: {fileID: 4304522030390275989}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1877512463 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4304522029859884707, guid: f170baa5871ab51418d0b81343113b45, type: 3}
@@ -3791,34 +3818,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 668178016}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 292926204}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: UseItem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 292926204}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: UpdateItemInventory
+        m_MethodName: CloseCharacterPanel
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1216615322}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4657,13 +4672,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 689396745}
     - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: statWeaponPower
+      value: 
+      objectReference: {fileID: 1698714250}
+    - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: statArmorDefence
+      value: 
+      objectReference: {fileID: 1807099698}
+    - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
       propertyPath: itemSlotContainer
       value: 
       objectReference: {fileID: 2161677318452988083, guid: 4f770ab9c893a344bb6dbafc9c242ab7, type: 3}
     - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: statequipedArmour
+      value: 
+      objectReference: {fileID: 703285153}
+    - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
       propertyPath: characterStatImage
       value: 
       objectReference: {fileID: 454336141}
+    - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+      propertyPath: statEquipedWeapons
+      value: 
+      objectReference: {fileID: 525389065}
     - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
       propertyPath: characerChoicePanel
       value: 
