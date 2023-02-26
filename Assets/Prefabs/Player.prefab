@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1413213098869546532}
   - component: {fileID: 1413213098869546534}
   - component: {fileID: 1413213098869546535}
+  - component: {fileID: 544301032}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -124,6 +125,7 @@ MonoBehaviour:
   playerAnimator: {fileID: 1413213098869546533}
   playerSpeed: 10
   transitionName: 
+  deactivateMovement: 0
 --- !u!50 &1413213098869546534
 Rigidbody2D:
   serializedVersion: 4
@@ -171,3 +173,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.65688396, y: 1.3889277}
   m_EdgeRadius: 0
+--- !u!114 &544301032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413213098869546529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038efbea084c9a54a97baf32deffcd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerName: Jimmy
+  characterImage: {fileID: 2074372208, guid: 0ed6fb9da572ec34ebd74f218f3bade9, type: 3}
+  maxLevel: 20
+  playerLevel: 1
+  currentXP: 30
+  maxHP: 100
+  currentHP: 0
+  xpForNextLevel: 
+  baseLevelXP: 100
+  maxMana: 30
+  currentMana: 0
+  dexterity: 10
+  defence: 30
+  equippedWeaponName: 
+  equippedArmorName: 
+  weaponPower: 0
+  armorDefence: 0
+  equipedWeapon: {fileID: 0}
+  equipedArmor: {fileID: 0}

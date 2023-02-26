@@ -58,7 +58,7 @@ public class ItemsManager : MonoBehaviour
                     Inventory.instance.AddItems(selectedCharacter.equipedArmor);
                 }
 
-                selectedCharacter.EquipEquipArmorn(this);
+                selectedCharacter.EquipArmor(this);
 
             }
         }

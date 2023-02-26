@@ -115,7 +115,7 @@ public class PlayerStats : MonoBehaviour
         weaponPower = equipedWeapon.weaponDexterity;
     }
     
-    public void EquipEquipArmorn (ItemsManager armorToEquip)
+    public void EquipArmor (ItemsManager armorToEquip)
     {
         equipedArmor = armorToEquip;
         equippedArmorName = equipedArmor.itemName;

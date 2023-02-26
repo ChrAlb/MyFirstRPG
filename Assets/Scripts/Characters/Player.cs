@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] Rigidbody2D playerRigidBody;
     [SerializeField] Animator playerAnimator;
 
-    [SerializeField] float playerSpeed = 2f;
+    [SerializeField] float playerSpeed = 10f;
 
     public string transitionName;
 
