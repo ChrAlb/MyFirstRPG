@@ -9,10 +9,34 @@ public class ItemButton : MonoBehaviour
     public void Press()
 
     {
-        MenuManager.Instance.itemName.text = itemOnButton.itemName;
-        MenuManager.Instance.itemDescription.text = itemOnButton.itemDescription;
+       
+        if(MenuManager.Instance.menu.activeInHierarchy)
+        {
+            // This is bad coding. Better to send the name and descrciption to the menu manager script.
+            MenuManager.Instance.itemName.text = itemOnButton.itemName;
+            MenuManager.Instance.itemDescription.text = itemOnButton.itemDescription;
 
-        MenuManager.Instance.activeItem = itemOnButton;
+            MenuManager.Instance.activeItem = itemOnButton;
+
+        }
+
+        if(ShopManager.instance.shopMenu.activeInHierarchy)
+        {
+
+            if (ShopManager.instance.buyPanel.activeInHierarchy)
+            {
+
+                ShopManager.instance.SelectedBuyItem(itemOnButton);
+
+            }
+            else if (ShopManager.instance.sellPanel.activeInHierarchy)
+            {
+
+                ShopManager.instance.SelctedSellItem(itemOnButton);
+
+            }
+        }
+        
 
     }
     

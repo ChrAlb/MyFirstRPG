@@ -56,6 +56,7 @@ public class Inventory : MonoBehaviour
 
                 {
                   itemsList.Add(item);
+            
                 }     
         
     }

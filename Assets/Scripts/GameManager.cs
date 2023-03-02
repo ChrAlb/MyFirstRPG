@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] PlayerStats[] playerStats;
 
-    public bool gameMenuOpened, dialogBoxOpended;
+    public bool gameMenuOpened, dialogBoxOpended, shopOpened;
+
+    public int currentBitcoins = 40;
     
     
     // Start is called before the first frame update
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (gameMenuOpened || dialogBoxOpended)
+        if (gameMenuOpened || dialogBoxOpended || shopOpened)
 
         {
             Player.instance.deactivateMovement = true;
