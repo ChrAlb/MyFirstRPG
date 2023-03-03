@@ -41,10 +41,13 @@ public class ShopManager : MonoBehaviour
     public void OpenShopMenu()
 
     {
+        
+        
         shopMenu.SetActive(true);
         GameManager.instance.shopOpened = true;
 
         currentBitcoinText.text = "BTC: " + GameManager.instance.currentBitcoins;
+        //currentBitcoinText.text = "BTC: " + 50;
 
         buyPanel.SetActive(true);
     }
@@ -131,5 +134,18 @@ public class ShopManager : MonoBehaviour
 
         }
 
+        
+
     }
+
+    public void SellItem()
+    {
+        GameManager.instance.currentBitcoins += (int)(selectedItem.valueInCoins * 0.75);
+        Inventory.instance.RemoveItem(selectedItem);
+
+        currentBitcoinText.text = "BTC: " + GameManager.instance.currentBitcoins;
+        selectedItem = null;
+
+    }
+
 }

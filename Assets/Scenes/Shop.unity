@@ -287,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
       propertyPath: itemSlotContainerParent
       value: 
-      objectReference: {fileID: 895191230}
+      objectReference: {fileID: 718766424}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f170baa5871ab51418d0b81343113b45, type: 3}
 --- !u!114 &298432025 stripped
@@ -1801,6 +1801,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712834631}
   m_CullTransparentMesh: 1
+--- !u!224 &718766424 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1986228305, guid: f170baa5871ab51418d0b81343113b45, type: 3}
+  m_PrefabInstance: {fileID: 298432024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730878705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1413213098869546529, guid: 4569cc5a676cad94b9b6f7a5d8fca9d8, type: 3}

@@ -23,6 +23,8 @@ public class ShopKeeper : MonoBehaviour
         {
             ShopManager.instance.itemsForSale = shopKeepersitemsForSale;
             ShopManager.instance.OpenShopMenu();
+
+
         }
     }
 

@@ -10,12 +10,14 @@ public class GameManager : MonoBehaviour
 
     public bool gameMenuOpened, dialogBoxOpended, shopOpened;
 
-    public int currentBitcoins = 40;
+    public int currentBitcoins;
     
     
     // Start is called before the first frame update
     void Start()
     {
+        currentBitcoins = 35;
+        
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
