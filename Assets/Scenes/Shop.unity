@@ -290,17 +290,6 @@ PrefabInstance:
       objectReference: {fileID: 718766424}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f170baa5871ab51418d0b81343113b45, type: 3}
---- !u!114 &298432025 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4304522029614575485, guid: f170baa5871ab51418d0b81343113b45, type: 3}
-  m_PrefabInstance: {fileID: 298432024}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1519871636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6aee0b33711f014794314c9540eceea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &298432026 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4304522029614575474, guid: f170baa5871ab51418d0b81343113b45, type: 3}
@@ -4849,9 +4838,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 298432025}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: OpenCharacterChoicePanel
+      - m_Target: {fileID: 1519871637}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: SellItem
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
