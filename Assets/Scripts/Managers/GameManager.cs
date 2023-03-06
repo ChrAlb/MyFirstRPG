@@ -34,6 +34,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Debug.Log("Data has been saved");
+            SaveData();
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Debug.Log("Data has been loaded");
+            LoadData();
+        }
+
         if (gameMenuOpened || dialogBoxOpended || shopOpened)
 
         {
@@ -50,5 +62,23 @@ public class GameManager : MonoBehaviour
     {
         return playerStats;
     }
+
+    public void SaveData()
+    {
+        PlayerPrefs.SetFloat("Player_Pos_X", Player.instance.transform.position.x);
+        PlayerPrefs.SetFloat("Player_Pos_Y", Player.instance.transform.position.y);
+        PlayerPrefs.SetFloat("Player_Pos_Z", Player.instance.transform.position.z);
+
+    }
+
+    public void LoadData()
+    {
+        Player.instance.transform.position = new Vector3(
+        PlayerPrefs.GetFloat("Player_Pos_X"),
+        PlayerPrefs.GetFloat("Player_Pos_Y"),
+        PlayerPrefs.GetFloat("Player_Pos_Z")
+        );
+    }
+    
 
 }

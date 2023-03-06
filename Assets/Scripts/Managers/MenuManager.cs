@@ -44,7 +44,7 @@ public class MenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-
+            Debug.Log("Menu pressed");
 
             if (menu.activeInHierarchy)
             {
