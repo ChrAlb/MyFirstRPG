@@ -119,12 +119,12 @@ TextureImporter:
       name: healer_f_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 108
-        width: 32
-        height: 36
+        width: 28
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -140,12 +140,12 @@ TextureImporter:
       name: healer_f_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 108
-        width: 32
-        height: 36
+        x: 34
+        y: 110
+        width: 28
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -161,12 +161,12 @@ TextureImporter:
       name: healer_f_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 108
-        width: 32
-        height: 36
+        width: 28
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: healer_f_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 72
-        width: 32
-        height: 36
+        width: 24
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: healer_f_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 72
-        width: 32
-        height: 36
+        x: 34
+        y: 74
+        width: 24
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -224,13 +224,13 @@ TextureImporter:
       name: healer_f_5
       rect:
         serializedVersion: 2
-        x: 64
+        x: 68
         y: 72
-        width: 32
-        height: 36
+        width: 22
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 30}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -245,12 +245,12 @@ TextureImporter:
       name: healer_f_6
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 36
-        width: 32
-        height: 36
+        width: 28
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -266,13 +266,13 @@ TextureImporter:
       name: healer_f_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 36
-        width: 32
-        height: 36
+        x: 34
+        y: 38
+        width: 28
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 30}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -287,12 +287,12 @@ TextureImporter:
       name: healer_f_8
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 36
-        width: 32
-        height: 36
+        width: 28
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -308,12 +308,12 @@ TextureImporter:
       name: healer_f_9
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 32
-        height: 36
+        width: 24
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -329,12 +329,12 @@ TextureImporter:
       name: healer_f_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 36
+        x: 38
+        y: 2
+        width: 24
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -350,12 +350,12 @@ TextureImporter:
       name: healer_f_11
       rect:
         serializedVersion: 2
-        x: 64
+        x: 70
         y: 0
-        width: 32
-        height: 36
+        width: 24
+        height: 34
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
