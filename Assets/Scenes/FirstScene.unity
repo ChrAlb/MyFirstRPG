@@ -425,7 +425,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &499926856 stripped
 Transform:
@@ -542,7 +542,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &655308080
 MonoBehaviour:
@@ -650,8 +650,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 800078232}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &780274010
 MonoBehaviour:
@@ -785,6 +785,11 @@ MonoBehaviour:
   - Steal the Gem
   - Take Monster Soul
   questMarkersCompleted: 
+--- !u!4 &800078232 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7078068903965757868, guid: aa1f45d41bfd6c3418cef0395e7c74e5, type: 3}
+  m_PrefabInstance: {fileID: 7078068903038084344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &964950427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,7 +1598,7 @@ Transform:
   m_Children:
   - {fileID: 1933241200}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1383621801 stripped
 Transform:
@@ -1987,7 +1992,7 @@ Transform:
   - {fileID: 1515094274}
   - {fileID: 964950428}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &100473591532146956
 PrefabInstance:
