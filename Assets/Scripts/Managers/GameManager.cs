@@ -98,7 +98,22 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Player_" + playerStats[i].PlayerName + "_WeaponPower", playerStats[i].weaponPower);
             PlayerPrefs.SetInt("Player_" + playerStats[i].PlayerName + "_ArmorDefence", playerStats[i].armorDefence);
 
+
+
+            PlayerPrefs.SetInt("Number_Of_Items", Inventory.instance.GetItemList().Count);
+            for (int j = 0; j < Inventory.instance.GetItemList().Count; j++)
+            {
+                ItemsManager itemInInventory = Inventory.instance.GetItemList()[j];
+                PlayerPrefs.SetString("Item_" + j + "_Name", itemInInventory.itemName);
+
+                if(itemInInventory.isStackable)
+                {
+                    PlayerPrefs.SetInt("Items_" + j  + "Name", itemInInventory.amount);
+                }
+            }
+
         }
+
 
 
     }

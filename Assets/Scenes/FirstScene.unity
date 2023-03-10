@@ -761,30 +761,6 @@ MonoBehaviour:
   armorDefence: 0
   equipedWeapon: {fileID: 0}
   equipedArmor: {fileID: 0}
---- !u!1 &800078228 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7078068903965757866, guid: aa1f45d41bfd6c3418cef0395e7c74e5, type: 3}
-  m_PrefabInstance: {fileID: 7078068903038084344}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &800078229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800078228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25a031a32b92424498f03705a1c5259e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questNames:
-  - 
-  - Defeat Dragon
-  - Enter Cave
-  - Steal the Gem
-  - Take Monster Soul
-  questMarkersCompleted: 
 --- !u!4 &800078232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7078068903965757868, guid: aa1f45d41bfd6c3418cef0395e7c74e5, type: 3}
