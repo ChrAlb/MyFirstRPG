@@ -106,10 +106,40 @@ public class GameManager : MonoBehaviour
     public void LoadData()
     {
         Player.instance.transform.position = new Vector3(
-        PlayerPrefs.GetFloat("Player_Pos_X"),
-        PlayerPrefs.GetFloat("Player_Pos_Y"),
-        PlayerPrefs.GetFloat("Player_Pos_Z")
+           PlayerPrefs.GetFloat("Player_Pos_X"),
+           PlayerPrefs.GetFloat("Player_Pos_Y"),
+           PlayerPrefs.GetFloat("Player_Pos_Z")
         );
+
+        for (int i =0; i< playerStats.Length; i++)
+        {
+            if (PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_active") == 0)
+            {
+                playerStats[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                playerStats[i].gameObject.SetActive(true);
+            }
+
+            playerStats[i].playerLevel = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_Level");
+            playerStats[i].currentXP = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_CurrentXP");
+
+            playerStats[i].maxHP = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_MaxHP");
+            playerStats[i].currentHP = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_CurrentHP");
+
+            playerStats[i].maxMana = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_MaxMana");
+            playerStats[i].currentMana = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_CurrentMana");
+
+            playerStats[i].dexterity = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_Dexterity");
+            playerStats[i].defence = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_Defence");
+
+            playerStats[i].equippedWeaponName = PlayerPrefs.GetString("Player_" + playerStats[i].PlayerName + "_EquipedWeapon");
+            playerStats[i].equippedArmorName = PlayerPrefs.GetString("Player_" + playerStats[i].PlayerName + "_EquipedArmor");
+
+            playerStats[i].weaponPower = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_WeaponPower");
+            playerStats[i].armorDefence = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_ArmorDefence");
+        }
     }
                   
 
