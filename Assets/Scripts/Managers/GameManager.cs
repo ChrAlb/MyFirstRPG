@@ -141,6 +141,6 @@ public class GameManager : MonoBehaviour
             playerStats[i].armorDefence = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_ArmorDefence");
         }
     }
-                  
+                           
 
 }
