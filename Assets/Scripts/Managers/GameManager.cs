@@ -65,15 +65,37 @@ public class GameManager : MonoBehaviour
 
     public void SaveData()
     {
+        SavingPlayerPositions();
+        SavingPlayerStats();
+
+        PlayerPrefs.SetInt("Number_Of_Items", Inventory.instance.GetItemList().Count);
+        for (int i = 0; i < Inventory.instance.GetItemList().Count; i++)
+        {
+            ItemsManager itemInInventory = Inventory.instance.GetItemList()[i];
+            PlayerPrefs.SetString("Item_" + i + "_Name", itemInInventory.itemName);
+
+            if (itemInInventory.isStackable)
+            {
+                PlayerPrefs.SetInt("Items_" + i + "_Amount", itemInInventory.amount);
+            }
+        }
+
+    }
+
+    private static void SavingPlayerPositions()
+    {
         PlayerPrefs.SetFloat("Player_Pos_X", Player.instance.transform.position.x);
         PlayerPrefs.SetFloat("Player_Pos_Y", Player.instance.transform.position.y);
         PlayerPrefs.SetFloat("Player_Pos_Z", Player.instance.transform.position.z);
+    }
 
-        for  (int i = 0; i< playerStats.Length; i++)
+    private void SavingPlayerStats()
+    {
+        for (int i = 0; i < playerStats.Length; i++)
         {
             if (playerStats[i].gameObject.activeInHierarchy)
             {
-                PlayerPrefs.SetInt("Player_" + playerStats[i].PlayerName + "_active",1);
+                PlayerPrefs.SetInt("Player_" + playerStats[i].PlayerName + "_active", 1);
             }
             else
             {
@@ -98,35 +120,38 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("Player_" + playerStats[i].PlayerName + "_WeaponPower", playerStats[i].weaponPower);
             PlayerPrefs.SetInt("Player_" + playerStats[i].PlayerName + "_ArmorDefence", playerStats[i].armorDefence);
 
-
-
-            PlayerPrefs.SetInt("Number_Of_Items", Inventory.instance.GetItemList().Count);
-            for (int j = 0; j < Inventory.instance.GetItemList().Count; j++)
-            {
-                ItemsManager itemInInventory = Inventory.instance.GetItemList()[j];
-                PlayerPrefs.SetString("Item_" + j + "_Name", itemInInventory.itemName);
-
-                if(itemInInventory.isStackable)
-                {
-                    PlayerPrefs.SetInt("Items_" + j  + "Name", itemInInventory.amount);
-                }
-            }
-
         }
-
-
-
     }
 
     public void LoadData()
     {
-        Player.instance.transform.position = new Vector3(
-           PlayerPrefs.GetFloat("Player_Pos_X"),
-           PlayerPrefs.GetFloat("Player_Pos_Y"),
-           PlayerPrefs.GetFloat("Player_Pos_Z")
-        );
+        LoadingPlayerPosition();
+        Loading_PlayerStats();
 
-        for (int i =0; i< playerStats.Length; i++)
+        for (int i = 0; i < PlayerPrefs.GetInt("Number_Of_Items"); i++)
+        {
+            string itemName = PlayerPrefs.GetString("Item_" + i + "_Name");
+            ItemsManager itemToAdd = ItemsAssets.instance.GetItemAsset(itemName);
+            int itemAmount = 0;
+
+            
+            if(PlayerPrefs.HasKey("Items_" + i + "_Amount"))
+            {
+                itemAmount = PlayerPrefs.GetInt("Items_" + i + "_Amount");
+            }
+
+            Inventory.instance.AddItems(itemToAdd);
+            if(itemToAdd.isStackable && itemAmount > 1)
+            {
+                itemToAdd.amount = itemAmount;
+            }
+        }
+
+    }
+
+    private void Loading_PlayerStats()
+    {
+        for (int i = 0; i < playerStats.Length; i++)
         {
             if (PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_active") == 0)
             {
@@ -156,6 +181,14 @@ public class GameManager : MonoBehaviour
             playerStats[i].armorDefence = PlayerPrefs.GetInt("Player_" + playerStats[i].PlayerName + "_ArmorDefence");
         }
     }
-                           
+
+    private static void LoadingPlayerPosition()
+    {
+        Player.instance.transform.position = new Vector3(
+                   PlayerPrefs.GetFloat("Player_Pos_X"),
+                   PlayerPrefs.GetFloat("Player_Pos_Y"),
+                   PlayerPrefs.GetFloat("Player_Pos_Z")
+                );
+    }
 
 }
