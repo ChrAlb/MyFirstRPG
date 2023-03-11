@@ -20,13 +20,35 @@ public class AudioManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F))
         {
-            PlaySFX(3);
+            PlayBackgroundMusic(1);
         }
     }
 
     public void PlaySFX ( int soundToPlay)
     {
-        SFX[soundToPlay].Play();
+        if(soundToPlay < SFX.Length)
+        {
+            SFX[soundToPlay].Play();
+        }
+        
+    }
+
+    public void PlayBackgroundMusic (int musicToPlay)
+    {
+       StopMusic();
+        
+        if (musicToPlay < backgroudMusic.Length)
+        {
+            backgroudMusic[musicToPlay].Play();
+        }
+    }
+
+    private void StopMusic()
+    {
+        foreach(AudioSource song in backgroudMusic)
+        {
+            song.Stop();
+        }
     }
 
 }
