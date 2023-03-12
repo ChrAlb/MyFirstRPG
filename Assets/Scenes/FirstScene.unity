@@ -239,12 +239,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1259252117440313933, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
-      propertyPath: transitionAreaName
-      value: Scene_2
+      propertyPath: sceneToLoad
+      value: SecondScene
       objectReference: {fileID: 0}
-    - target: {fileID: 2634345057155279998, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
-      propertyPath: transitionAreaName
-      value: Scene_2
+    - target: {fileID: 5643424291869708715, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 5643424291869708715, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 6394867627714399806, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
       propertyPath: m_Name
@@ -1405,7 +1409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 655308075}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.85, y: -5.9, z: 0}
+  m_LocalPosition: {x: -8.360061, y: -2.1812747, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
