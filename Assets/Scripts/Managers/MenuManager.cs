@@ -155,13 +155,19 @@ public class MenuManager : MonoBehaviour
     {
         Inventory.instance.RemoveItem(activeItem);
         UpdateItemInventory();
+        AudioManager.Instance.PlaySFX(3);
     }
 
     public void UseItem(int selectedCharacter)
     {
         activeItem.UseItem(selectedCharacter);
         OpenCharacterChoicePanel();
-        DiscardItem();   // This should be moved!!
+        //DiscardItem();   // This should be moved!!
+
+        UpdateItemInventory();
+        AudioManager.Instance.PlaySFX(8);
+
+
     }
 
     public void OpenCharacterChoicePanel()
