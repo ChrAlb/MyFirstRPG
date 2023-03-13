@@ -164,6 +164,7 @@ public class MenuManager : MonoBehaviour
         OpenCharacterChoicePanel();
         //DiscardItem();   // This should be moved!!
 
+        Inventory.instance.RemoveItem(activeItem);
         UpdateItemInventory();
         AudioManager.Instance.PlaySFX(8);
 

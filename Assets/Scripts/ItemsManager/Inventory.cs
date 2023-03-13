@@ -39,8 +39,7 @@ public class Inventory : MonoBehaviour
                     itemAlreadyInInventory = true;
                     
                 }
-                
-               
+                              
             }
 
             if (!itemAlreadyInInventory)
@@ -49,14 +48,10 @@ public class Inventory : MonoBehaviour
 
             }
 
-
         }
-
         else
-
                 {
                   itemsList.Add(item);
-            
                 }     
         
     }

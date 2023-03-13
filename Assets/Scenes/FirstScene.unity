@@ -746,13 +746,13 @@ MonoBehaviour:
   characterImage: {fileID: 21300000, guid: 8fb2967219194c645832530899300eb2, type: 3}
   maxLevel: 50
   playerLevel: 1
-  currentXP: 0
+  currentXP: 60
   maxHP: 100
   currentHP: 0
   xpForNextLevel: 
   baseLevelXP: 100
   maxMana: 30
-  currentMana: 0
+  currentMana: 20
   dexterity: 2
   defence: 7
   equippedWeaponName: 
