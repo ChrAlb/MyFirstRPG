@@ -39,4 +39,9 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("We just Quit the GAME!!!!");
     }
+
+    public void ContinueButton()
+    {
+        SceneManager.LoadScene("LoadingScene");
+    }
 }

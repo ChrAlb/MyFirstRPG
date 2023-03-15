@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -67,6 +68,8 @@ public class GameManager : MonoBehaviour
     {
         SavingPlayerPositions();
         SavingPlayerStats();
+
+        PlayerPrefs.SetString("Current_Scene", SceneManager.GetActiveScene().name);
 
         PlayerPrefs.SetInt("Number_Of_Items", Inventory.instance.GetItemList().Count);
         for (int i = 0; i < Inventory.instance.GetItemList().Count; i++)
