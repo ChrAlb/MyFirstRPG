@@ -133,6 +133,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3665709613609143744, guid: 1460ee1ef18fe1847b1a0fd29a1277fd, type: 3}
   m_PrefabInstance: {fileID: 3665709613710346292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &172476251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 172476253}
+  - component: {fileID: 172476252}
+  m_Layer: 0
+  m_Name: Battle Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &172476252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172476251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2667ae1495e588478b8ea29df1cea3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleScene: {fileID: 0}
+  playerPositions: []
+  enemyPositions: []
+--- !u!4 &172476253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172476251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1908146676}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &178440314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4104,7 +4152,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908146675}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4113,8 +4161,8 @@ Transform:
   - {fileID: 1174803339}
   - {fileID: 500908222}
   - {fileID: 1810002765}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 172476253}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1997732624
 GameObject:
@@ -4630,6 +4678,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e52162b44f8118a41a26ab885ba6c03e, type: 3}
+--- !u!1 &1104579708746648418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1104579708552710138, guid: e52162b44f8118a41a26ab885ba6c03e, type: 3}
+  m_PrefabInstance: {fileID: 1104579708746648417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1104579708746648419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104579708746648418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  attacksAvailable: []
+  characterName: Drago
+  currentHP: 0
+  maxHP: 0
+  currentMana: 0
+  maxMana: 0
+  dexterity: 0
+  defence: 0
+  wpnwpower: 0
+  armorDefence: 0
+  isDead: 0
 --- !u!1001 &1365111170252039398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4695,6 +4772,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07052035fa112124f8eb4f73735593b3, type: 3}
+--- !u!1 &1365111170252039399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1365111169033446436, guid: 07052035fa112124f8eb4f73735593b3, type: 3}
+  m_PrefabInstance: {fileID: 1365111170252039398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1365111170252039400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365111170252039399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  attacksAvailable: []
+  characterName: Mage
+  currentHP: 500
+  maxHP: 500
+  currentMana: 200
+  maxMana: 200
+  dexterity: 16
+  defence: 5
+  wpnwpower: 30
+  armorDefence: 10
+  isDead: 0
 --- !u!1001 &3460706588087310065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4752,6 +4858,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a80d707039c9de540801c5b632d6e873, type: 3}
+--- !u!1 &3460706588087310066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3460706587697721604, guid: a80d707039c9de540801c5b632d6e873, type: 3}
+  m_PrefabInstance: {fileID: 3460706588087310065}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3460706588087310067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460706588087310066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  attacksAvailable: []
+  characterName: Maga Master
+  currentHP: 666
+  maxHP: 666
+  currentMana: 666
+  maxMana: 666
+  dexterity: 23
+  defence: 12
+  wpnwpower: 45
+  armorDefence: 30
+  isDead: 0
 --- !u!1001 &3665709613710346292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4809,6 +4944,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1460ee1ef18fe1847b1a0fd29a1277fd, type: 3}
+--- !u!1 &3665709613710346293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3665709613609143751, guid: 1460ee1ef18fe1847b1a0fd29a1277fd, type: 3}
+  m_PrefabInstance: {fileID: 3665709613710346292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3665709613710346294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665709613710346293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  attacksAvailable: []
+  characterName: Warlock
+  currentHP: 200
+  maxHP: 200
+  currentMana: 500
+  maxMana: 500
+  dexterity: 5
+  defence: 6
+  wpnwpower: 60
+  armorDefence: 4
+  isDead: 0
 --- !u!66 &3942985140338062504
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -19795,6 +19959,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b907caaff454f6541bb9be2e0502c6b9, type: 3}
+--- !u!1 &4181836268592692030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4181836268595017604, guid: b907caaff454f6541bb9be2e0502c6b9, type: 3}
+  m_PrefabInstance: {fileID: 4181836268592692029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4181836268592692031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4181836268592692030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  attacksAvailable: []
+  characterName: Grim
+  currentHP: 0
+  maxHP: 0
+  currentMana: 0
+  maxMana: 0
+  dexterity: 0
+  defence: 0
+  wpnwpower: 0
+  armorDefence: 0
+  isDead: 0
 --- !u!1001 &4221510472971668449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19852,6 +20045,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c98f4de1744558349b07e2c27778279b, type: 3}
+--- !u!1 &4221510472971668450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4221510473264788976, guid: c98f4de1744558349b07e2c27778279b, type: 3}
+  m_PrefabInstance: {fileID: 4221510472971668449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4221510472971668451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221510472971668450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 0
+  attacksAvailable: []
+  characterName: Blueface
+  currentHP: 200
+  maxHP: 200
+  currentMana: 300
+  maxMana: 300
+  dexterity: 12
+  defence: 12
+  wpnwpower: 10
+  armorDefence: 10
+  isDead: 0
 --- !u!1001 &4602572854015785239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19909,3 +20131,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: daaa8f272e4ab564c8e1de94cbe8c673, type: 3}
+--- !u!1 &4602572854015785240 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4602572853792926540, guid: daaa8f272e4ab564c8e1de94cbe8c673, type: 3}
+  m_PrefabInstance: {fileID: 4602572854015785239}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4602572854015785241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4602572854015785240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  attacksAvailable: []
+  characterName: Jimmy
+  currentHP: 0
+  maxHP: 0
+  currentMana: 0
+  maxMana: 0
+  dexterity: 0
+  defence: 0
+  wpnwpower: 0
+  armorDefence: 0
+  isDead: 0
