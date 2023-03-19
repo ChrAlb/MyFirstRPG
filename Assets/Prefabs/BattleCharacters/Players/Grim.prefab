@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3460706587697721604
+--- !u!1 &4275762569522578788
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3460706587697721607}
-  - component: {fileID: 3460706587697721606}
-  - component: {fileID: 2509408130802141407}
+  - component: {fileID: 581682952166006293}
+  - component: {fileID: 2946409951416452448}
+  - component: {fileID: 7510025498918134402}
   m_Layer: 0
-  m_Name: Maga Master
+  m_Name: Grim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3460706587697721607
+--- !u!4 &581682952166006293
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460706587697721604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.98, y: 4.47, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_GameObject: {fileID: 4275762569522578788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.73, y: 3.55, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3460706587697721606
+--- !u!212 &2946409951416452448
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460706587697721604}
+  m_GameObject: {fileID: 4275762569522578788}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 577825003
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -997456965, guid: 5854118f7cb3122408113148b63b813c, type: 3}
+  m_Sprite: {fileID: -1531406830, guid: 91213b3ba8296b448b6024943f6dcff3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,27 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2509408130802141407
+--- !u!114 &7510025498918134402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460706587697721604}
+  m_GameObject: {fileID: 4275762569522578788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1487a2e66ada4b44989f38fe93e9398, type: 3}
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 0
+  isPlayer: 1
   attacksAvailable: []
-  characterName: Maga Master
-  currentHP: 666
-  maxHP: 666
-  currentMana: 666
-  maxMana: 666
-  dexterity: 23
-  defence: 17
-  wpnwpower: 45
-  armorDefence: 30
+  characterName: Grim
+  currentHP: 0
+  maxHP: 0
+  currentMana: 0
+  maxMana: 0
+  dexterity: 0
+  defence: 0
+  wpnwpower: 0
+  armorDefence: 0
   isDead: 0

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1104579708552710138
+--- !u!1 &556301900116732887
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1104579708552710141}
-  - component: {fileID: 1104579708552710140}
-  - component: {fileID: 1104579708552710143}
+  - component: {fileID: 556301900116732884}
+  - component: {fileID: 556301900116732882}
+  - component: {fileID: 556301900116732885}
   m_Layer: 0
-  m_Name: Drago
+  m_Name: Blueface
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1104579708552710141
+--- !u!4 &556301900116732884
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104579708552710138}
+  m_GameObject: {fileID: 556301900116732887}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.98, y: 4.47, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalPosition: {x: -1.46, y: 10.46, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1104579708552710140
+--- !u!212 &556301900116732882
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104579708552710138}
+  m_GameObject: {fileID: 556301900116732887}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,38 +74,38 @@ SpriteRenderer:
   m_SortingLayerID: 577825003
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -116829301, guid: ce8f682ac6042ee4987ef97615fd0b61, type: 3}
+  m_Sprite: {fileID: 2047203603, guid: 52fa8ac777bdb1b4a9ea3d280d00c867, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3333334, y: 2.6666667}
+  m_Size: {x: 1.40625, y: 1.59375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1104579708552710143
+--- !u!114 &556301900116732885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1104579708552710138}
+  m_GameObject: {fileID: 556301900116732887}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1487a2e66ada4b44989f38fe93e9398, type: 3}
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayer: 1
+  isPlayer: 0
   attacksAvailable: []
-  characterName: Drago
-  currentHP: 0
-  maxHP: 0
-  currentMana: 0
-  maxMana: 0
-  dexterity: 0
-  defence: 0
-  wpnwpower: 0
-  armorDefence: 0
+  characterName: Blueface
+  currentHP: 200
+  maxHP: 200
+  currentMana: 300
+  maxMana: 300
+  dexterity: 12
+  defence: 12
+  wpnwpower: 10
+  armorDefence: 10
   isDead: 0

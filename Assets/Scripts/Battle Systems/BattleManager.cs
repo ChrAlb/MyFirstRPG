@@ -12,7 +12,8 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] Transform[] playerPositions, enemyPositions;
 
-    [SerializeField] BattleCharacters playerPrefabs, enemiesPrefabs;
+    [SerializeField] BattleCharacters[] playerPrefabs, enemiesPrefabs;
+
     
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,26 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            StartBattle(new string[] {"Maga Master","Warlock" });
+        }
     }
+
+    public void StartBattle(string[] enemiesToSpawn)
+    {
+        if(!isBattleActive)
+        {
+            isBattleActive = true;
+            GameManager.instance.battleIsActive = true;
+
+            transform.position = new Vector3(
+                Camera.main.transform.position.x, 
+                Camera.main.transform.position.y, 
+                transform.position.z);
+
+            battleScene.SetActive(true);
+        }
+    }
+
 }
