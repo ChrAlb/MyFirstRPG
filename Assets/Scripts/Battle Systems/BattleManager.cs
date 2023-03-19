@@ -38,12 +38,18 @@ public class BattleManager : MonoBehaviour
 
         for(int i = 0; i < GameManager.instance.GetPlayerStats().Length; i++)
         {
-            if(GameManager.instance.GetPlayerStats()[i].gameObject.activeInHierarchy)
+            
+
+            if (GameManager.instance.GetPlayerStats()[i].gameObject.activeInHierarchy)
             {
+               
                 for (int j = 0; j< playerPrefabs.Length; j++)
                 {
+                    Debug.Log("bevor" + playerPrefabs[j].characterName);
                     if (playerPrefabs[j].characterName == GameManager.instance.GetPlayerStats()[i].PlayerName)
                     {
+                        Debug.Log(GameManager.instance.GetPlayerStats()[i].PlayerName);
+
                         BattleCharacters newPlayer = Instantiate(
                             playerPrefabs[j],
                             playerPositions[i].position,

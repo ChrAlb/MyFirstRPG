@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038efbea084c9a54a97baf32deffcd02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerName: Darco
+  PlayerName: Draco
   characterImage: {fileID: 947692789, guid: ce8f682ac6042ee4987ef97615fd0b61, type: 3}
   maxLevel: 50
   playerLevel: 1
