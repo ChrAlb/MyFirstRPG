@@ -9,6 +9,7 @@ public class BattleManager : MonoBehaviour
     private bool isBattleActive;
 
     [SerializeField] GameObject battleScene;
+    [SerializeField] List<BattleCharacters> activeCharacters = new List<BattleCharacters>();
 
     [SerializeField] Transform[] playerPositions, enemyPositions;
 
@@ -33,18 +34,44 @@ public class BattleManager : MonoBehaviour
 
     public void StartBattle(string[] enemiesToSpawn)
     {
-        if(!isBattleActive)
+        SettingUpBattle();
+
+        for(int i = 0; i < GameManager.instance.GetPlayerStats().Length; i++)
+        {
+            if(GameManager.instance.GetPlayerStats()[i].gameObject.activeInHierarchy)
+            {
+                for (int j = 0; j< playerPrefabs.Length; j++)
+                {
+                    if (playerPrefabs[j].characterName == GameManager.instance.GetPlayerStats()[i].PlayerName)
+                    {
+                        BattleCharacters newPlayer = Instantiate(
+                            playerPrefabs[j],
+                            playerPositions[i].position,
+                            playerPositions[i].rotation,
+                            playerPositions[i]
+                            );
+
+                        activeCharacters.Add(newPlayer);
+                    }
+                }
+            }
+        }
+
+    }
+
+    private void SettingUpBattle()
+    {
+        if (!isBattleActive)
         {
             isBattleActive = true;
             GameManager.instance.battleIsActive = true;
 
             transform.position = new Vector3(
-                Camera.main.transform.position.x, 
-                Camera.main.transform.position.y, 
+                Camera.main.transform.position.x,
+                Camera.main.transform.position.y,
                 transform.position.z);
 
             battleScene.SetActive(true);
         }
     }
-
 }

@@ -1315,13 +1315,17 @@ PrefabInstance:
       propertyPath: transitionAreaName
       value: DungeonZone
       objectReference: {fileID: 0}
+    - target: {fileID: 2634345057155279998, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
+      propertyPath: transitionAreaName
+      value: DungeonZone
+      objectReference: {fileID: 0}
     - target: {fileID: 5643424291869708715, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 5643424291869708715, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 6394867627714399806, guid: e01fec0b08e0feb438fd8261f79768a1, type: 3}
       propertyPath: m_Name
