@@ -15,6 +15,10 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] BattleCharacters[] playerPrefabs, enemiesPrefabs;
 
+    [SerializeField] int currentTurn;
+    [SerializeField] bool waitingForTurn;
+    [SerializeField] GameObject UIButtonHolder;
+
     
     // Start is called before the first frame update
     void Start()
@@ -30,22 +34,49 @@ public class BattleManager : MonoBehaviour
         {
             StartBattle(new string[] { "Mage Master", "Warlock", "Mage", "Blueface" });
         }
+
+        if(Input.GetKeyDown(KeyCode.N))
+        {
+            NextTurn();
+        }
+
+        if (isBattleActive)
+        {
+            if(waitingForTurn)
+            {
+                if(activeCharacters[currentTurn].IsPlayer())
+                    UIButtonHolder.SetActive(true);
+                else
+                    UIButtonHolder.SetActive(false);
+            }
+        }
     }
 
     public void StartBattle(string[] enemiesToSpawn)
     {
-        SettingUpBattle();
-        AddingPlayers();
+        if (!isBattleActive)
+        {
+            SettingUpBattle();
+            AddingPlayers();
+            AddingEnemies(enemiesToSpawn);
 
+            waitingForTurn = true;
+            currentTurn = 0; //Random.RandomRange(0,activeCharacters.Count);
+        }
+
+    }
+
+    private void AddingEnemies(string[] enemiesToSpawn)
+    {
         for (int i = 0; i < enemiesToSpawn.Length; i++)
         {
-            if(enemiesToSpawn[i] != "")
+            if (enemiesToSpawn[i] != "")
             {
-             for (int j = 0; j < enemiesPrefabs.Length; j++)
+                for (int j = 0; j < enemiesPrefabs.Length; j++)
                 {
-                    if(enemiesPrefabs[j].characterName == enemiesToSpawn[i])
+                    if (enemiesPrefabs[j].characterName == enemiesToSpawn[i])
                     {
-                        BattleCharacters newEnemey = Instantiate( 
+                        BattleCharacters newEnemey = Instantiate(
                             enemiesPrefabs[j],
                             enemyPositions[i].position,
                             enemyPositions[i].rotation,
@@ -56,7 +87,6 @@ public class BattleManager : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void AddingPlayers()
@@ -110,8 +140,8 @@ public class BattleManager : MonoBehaviour
 
     private void SettingUpBattle()
     {
-        if (!isBattleActive)
-        {
+        
+        
             isBattleActive = true;
             GameManager.instance.battleIsActive = true;
 
@@ -121,6 +151,13 @@ public class BattleManager : MonoBehaviour
                 transform.position.z);
 
             battleScene.SetActive(true);
-        }
+        
+    }
+
+    private void NextTurn()
+    {
+        currentTurn++;
+        if(currentTurn >=  activeCharacters.Count)
+            currentTurn = 0;
     }
 }
