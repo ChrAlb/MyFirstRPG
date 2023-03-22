@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    
+
     public static BattleManager instance;
     private bool isBattleActive;
 
@@ -19,35 +19,45 @@ public class BattleManager : MonoBehaviour
     [SerializeField] bool waitingForTurn;
     [SerializeField] GameObject UIButtonHolder;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        instance = this; 
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             StartBattle(new string[] { "Mage Master", "Warlock", "Mage", "Blueface" });
         }
 
-        if(Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             NextTurn();
         }
 
+        CheckPlayerButtonHolder();
+    }
+
+    private void CheckPlayerButtonHolder()
+    {
         if (isBattleActive)
         {
-            if(waitingForTurn)
+            if (waitingForTurn)
             {
-                if(activeCharacters[currentTurn].IsPlayer())
+                if (activeCharacters[currentTurn].IsPlayer())
                     UIButtonHolder.SetActive(true);
                 else
+                {
                     UIButtonHolder.SetActive(false);
+                    StartCoroutine(EnemyMoveCoroutine());
+
+                }
+
             }
         }
     }
@@ -140,24 +150,101 @@ public class BattleManager : MonoBehaviour
 
     private void SettingUpBattle()
     {
-        
-        
-            isBattleActive = true;
-            GameManager.instance.battleIsActive = true;
 
-            transform.position = new Vector3(
-                Camera.main.transform.position.x,
-                Camera.main.transform.position.y,
-                transform.position.z);
 
-            battleScene.SetActive(true);
-        
+        isBattleActive = true;
+        GameManager.instance.battleIsActive = true;
+
+        transform.position = new Vector3(
+            Camera.main.transform.position.x,
+            Camera.main.transform.position.y,
+            transform.position.z);
+
+        battleScene.SetActive(true);
+
     }
 
     private void NextTurn()
     {
         currentTurn++;
-        if(currentTurn >=  activeCharacters.Count)
+        if (currentTurn >= activeCharacters.Count)
             currentTurn = 0;
+
+        waitingForTurn = true;
+        UpdateBattle();
     }
+
+    private void UpdateBattle()
+    {
+        bool allEnemiesAreDead = true;
+        bool allPlayersAreDead = true;
+
+        for (int i = 0; i < activeCharacters.Count; i++)
+        {
+            if(activeCharacters[i].currentHP < 0 )
+            {
+                activeCharacters[i].currentHP = 0;
+            }
+
+            if (activeCharacters[i].currentHP == 0)
+            {
+                //kill Character
+            }
+            else 
+            {
+                if(activeCharacters[i].IsPlayer())
+                {
+                    allPlayersAreDead = false;
+                }
+                else
+                {
+                    allEnemiesAreDead = false;
+                }
+            }
+
+            if(allEnemiesAreDead || allPlayersAreDead)
+            {
+                if (allEnemiesAreDead)
+                     print("We won !!!!");
+                else if(allPlayersAreDead)
+                    print("We lost !!");
+                battleScene.SetActive(false);
+                GameManager.instance.battleIsActive = false;
+                isBattleActive = false;
+            }
+               
+        }
+
+    }
+
+    public IEnumerator EnemyMoveCoroutine()
+    {
+        waitingForTurn=false;
+
+        yield return new WaitForSeconds(1f);
+
+        EnemyAttack();
+
+        yield return new WaitForSeconds(1f);
+
+        NextTurn();
+    }
+
+    private void EnemyAttack()
+    {
+        List<int> players = new List<int>();
+        
+
+        for (int i = 0; i < activeCharacters.Count; i++)
+        {
+            if(activeCharacters[i].IsPlayer() && activeCharacters[i].currentHP > 0 )
+            {
+                players.Add(i);
+            }
+
+        }
+        int selectedPlayerToAttack = players[Random.Range(0, players.Count)];
+    }
+
 }
+
