@@ -181,6 +181,8 @@ public class BattleManager : MonoBehaviour
 
         for (int i = 0; i < activeCharacters.Count; i++)
         {
+            //Debug.Log(activeCharacters[i].currentHP);
+            //Debug.Log(activeCharacters[i].name);
             if(activeCharacters[i].currentHP < 0 )
             {
                 activeCharacters[i].currentHP = 0;
@@ -188,6 +190,7 @@ public class BattleManager : MonoBehaviour
 
             if (activeCharacters[i].currentHP == 0)
             {
+                Debug.Log("Kill");
                 //kill Character
             }
             else 
@@ -200,19 +203,17 @@ public class BattleManager : MonoBehaviour
                 {
                     allEnemiesAreDead = false;
                 }
-            }
-
-            if(allEnemiesAreDead || allPlayersAreDead)
-            {
-                if (allEnemiesAreDead)
-                     print("We won !!!!");
-                else if(allPlayersAreDead)
-                    print("We lost !!");
-                battleScene.SetActive(false);
-                GameManager.instance.battleIsActive = false;
-                isBattleActive = false;
-            }
-               
+            }           
+        }
+        if (allEnemiesAreDead || allPlayersAreDead)
+        {
+            if (allEnemiesAreDead)
+                print("We won !!!!");
+            else if (allPlayersAreDead)
+                print("We lost !!");
+            battleScene.SetActive(false);
+            GameManager.instance.battleIsActive = false;
+            isBattleActive = false;
         }
 
     }
