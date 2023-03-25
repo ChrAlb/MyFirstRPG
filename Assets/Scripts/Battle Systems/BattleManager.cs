@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-
+    
     public static BattleManager instance;
     private bool isBattleActive;
 
@@ -19,44 +19,41 @@ public class BattleManager : MonoBehaviour
     [SerializeField] bool waitingForTurn;
     [SerializeField] GameObject UIButtonHolder;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        instance = this;
+        instance = this; 
         DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if(Input.GetKeyDown(KeyCode.B))
         {
-            StartBattle(new string[] { "Mage Master", "Warlock", "Mage", "Blueface" });
+            StartBattle(new string[] { "Mage Master", "Warlock"});
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if(Input.GetKeyDown(KeyCode.N))
         {
             NextTurn();
         }
 
-        CheckPlayerButtonHolder();
-    }
-
-    private void CheckPlayerButtonHolder()
-    {
         if (isBattleActive)
         {
-            if (waitingForTurn)
+            if(waitingForTurn)
             {
-                if (activeCharacters[currentTurn].IsPlayer())
+                if(activeCharacters[currentTurn].IsPlayer())
                     UIButtonHolder.SetActive(true);
                 else
-                {
                     UIButtonHolder.SetActive(false);
                     StartCoroutine(EnemyMoveCoroutine());
 
                 }
+
+
+
 
             }
         }
@@ -150,28 +147,25 @@ public class BattleManager : MonoBehaviour
 
     private void SettingUpBattle()
     {
+        
+        
+            isBattleActive = true;
+            GameManager.instance.battleIsActive = true;
 
+            transform.position = new Vector3(
+                Camera.main.transform.position.x,
+                Camera.main.transform.position.y,
+                transform.position.z);
 
-        isBattleActive = true;
-        GameManager.instance.battleIsActive = true;
-
-        transform.position = new Vector3(
-            Camera.main.transform.position.x,
-            Camera.main.transform.position.y,
-            transform.position.z);
-
-        battleScene.SetActive(true);
-
+            battleScene.SetActive(true);
+        
     }
 
     private void NextTurn()
     {
         currentTurn++;
-        if (currentTurn >= activeCharacters.Count)
+        if(currentTurn >=  activeCharacters.Count)
             currentTurn = 0;
-
-        waitingForTurn = true;
-        UpdateBattle();
     }
 
     private void UpdateBattle()
@@ -181,8 +175,6 @@ public class BattleManager : MonoBehaviour
 
         for (int i = 0; i < activeCharacters.Count; i++)
         {
-            //Debug.Log(activeCharacters[i].currentHP);
-            //Debug.Log(activeCharacters[i].name);
             if(activeCharacters[i].currentHP < 0 )
             {
                 activeCharacters[i].currentHP = 0;
@@ -190,7 +182,6 @@ public class BattleManager : MonoBehaviour
 
             if (activeCharacters[i].currentHP == 0)
             {
-                Debug.Log("Kill");
                 //kill Character
             }
             else 
@@ -203,17 +194,19 @@ public class BattleManager : MonoBehaviour
                 {
                     allEnemiesAreDead = false;
                 }
-            }           
-        }
-        if (allEnemiesAreDead || allPlayersAreDead)
-        {
-            if (allEnemiesAreDead)
-                print("We won !!!!");
-            else if (allPlayersAreDead)
-                print("We lost !!");
-            battleScene.SetActive(false);
-            GameManager.instance.battleIsActive = false;
-            isBattleActive = false;
+            }
+
+            if(allEnemiesAreDead || allPlayersAreDead)
+            {
+                if (allEnemiesAreDead)
+                     print("We won !!!!");
+                else if(allPlayersAreDead)
+                    print("We lost !!");
+                battleScene.SetActive(false);
+                GameManager.instance.battleIsActive = false;
+                isBattleActive = false;
+            }
+               
         }
 
     }

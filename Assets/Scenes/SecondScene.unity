@@ -651,19 +651,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733191, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.292269
+      value: -4.296571
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733191, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.92546
+      value: -1.82545
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733432, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: orthographic size
-      value: 7.2
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910900720472, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_Lens.OrthographicSize
-      value: 7.2
+      value: 6.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
