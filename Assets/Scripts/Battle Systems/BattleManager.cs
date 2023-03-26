@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -162,9 +163,50 @@ public class BattleManager : MonoBehaviour
     private void NextTurn()
     {
         currentTurn++;
-        if (currentTurn >=    activeCharacters.Count)
+        if (currentTurn >= activeCharacters.Count)
         {
             currentTurn = 0;
         }
+
+        waitingForTurn = true;
+        UpdateBattle();
+    }
+
+    private void UpdateBattle()
+    {
+        bool allEnemiesAreDead = true;
+        bool allPlayerAreDead = true;
+
+        for (int i = 0; i < activeCharacters.Count; i++)
+        {
+            if (activeCharacters[i].currentHP < 0)
+            {
+                activeCharacters[i].currentHP = 0;
+            }
+
+            if(activeCharacters[i].currentHP == 0)
+            {
+                //killCharacter;
+            }
+            else
+            {
+                if (activeCharacters[i].IsPlayer())
+                    allEnemiesAreDead = false;
+                else
+                    allPlayerAreDead = false;
+            }
+        }
+
+        if (allEnemiesAreDead || allPlayerAreDead)
+        {
+            print("WE WON!!!");
+        }
+        else if (allEnemiesAreDead)
+            print("WE LOST !");
+
+        battleScene.SetActive(false);
+        GameManager.instance.battleIsActive = false;
+        isBattleActive = false; 
+
     }
 }
