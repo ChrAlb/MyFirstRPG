@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1723894484238926456}
   - component: {fileID: 746834498823057061}
+  - component: {fileID: 7179168992110765538}
   m_Layer: 0
-  m_Name: 'Drago '
+  m_Name: Draco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,3 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7179168992110765538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318202218183336019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e101ec95446b94db159c7d745582a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  attacksAvailable: []
+  characterName: Draco
+  currentHP: 0
+  maxHP: 0
+  currentMana: 0
+  maxMana: 0
+  dexterity: 0
+  defence: 0
+  wpnwpower: 0
+  armorDefence: 0
+  isDead: 0

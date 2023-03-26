@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class BattleManager : MonoBehaviour
 {
-    
+
     public static BattleManager instance;
+
     private bool isBattleActive;
 
     [SerializeField] GameObject battleScene;
+
     [SerializeField] List<BattleCharacters> activeCharacters = new List<BattleCharacters>();
 
     [SerializeField] Transform[] playerPositions, enemyPositions;
-
     [SerializeField] BattleCharacters[] playerPrefabs, enemiesPrefabs;
 
     
