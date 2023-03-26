@@ -1677,6 +1677,9 @@ MonoBehaviour:
   - {fileID: 6118124017316700700, guid: ccf49f086ff8ff04b92a5222e8866e00, type: 3}
   - {fileID: 7246285717824500124, guid: 57962e8eb4e4ffc4cba442ac579ddb41, type: 3}
   - {fileID: 4518857360761879560, guid: 93f7548d9c298bc45a21bb958bfd8a34, type: 3}
+  currentTurn: 0
+  waitingForTurn: 0
+  UIButtonHolder: {fileID: 1701249614}
 --- !u!4 &865104153
 Transform:
   m_ObjectHideFlags: 0

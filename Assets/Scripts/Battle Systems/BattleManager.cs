@@ -1,4 +1,4 @@
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,9 +32,9 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B))
         {
-            StartBattle(new string[] {"Mage Master","Warlock", "Blueface" , "Mage" });
+            StartBattle(new string[] { "Mage Master", "Warlock", "Blueface", "Mage" });
         }
 
         if (Input.GetKeyDown(KeyCode.N))
@@ -42,15 +42,23 @@ public class BattleManager : MonoBehaviour
             NextTurn();
         }
 
+        CheckPlayerButtonHolders();
+    }
 
+    private void CheckPlayerButtonHolders()
+    {
         if (isBattleActive)
         {
-            if(waitingForTurn)
+            if (waitingForTurn)
             {
-                if(activeCharacters[currentTurn].IsPlayer())
-                    UIButtonHolder.SetActive(true); 
+                if (activeCharacters[currentTurn].IsPlayer())
+                    UIButtonHolder.SetActive(true);
                 else
+                {
                     UIButtonHolder.SetActive(false);
+                    StartCoroutine(EnemyMoveCoroutine());
+                }
+
             }
         }
     }
@@ -199,14 +207,43 @@ public class BattleManager : MonoBehaviour
 
         if (allEnemiesAreDead || allPlayerAreDead)
         {
-            print("WE WON!!!");
-        }
-        else if (allEnemiesAreDead)
-            print("WE LOST !");
+            if (allEnemiesAreDead)
+                print("WE WON !!!!");
+            else
+                if (allPlayerAreDead)
+                print("WE LOST!!");
 
-        battleScene.SetActive(false);
-        GameManager.instance.battleIsActive = false;
-        isBattleActive = false; 
+
+            battleScene.SetActive(false);
+            GameManager.instance.battleIsActive = false;
+            isBattleActive = false;
+        }
+    }
+
+    public IEnumerator EnemyMoveCoroutine()
+    {
+        waitingForTurn = false;
+        yield return new WaitForSeconds(1f);
+
+        EnemyAttack();
+
+        yield return new WaitForSeconds(1f);
+        NextTurn();
+    }
+
+    private void EnemyAttack()
+    {
+        List<int> players = new List<int>();
+       
+
+        for (int i = 0; i < activeCharacters.Count; i++)
+        {
+            if(activeCharacters[i].IsPlayer() && activeCharacters[i].currentHP > 0)
+            {
+                players.Add(i);
+            }
+        }
+        int selectedPlayerToAttack = players[Random.Range(0, players.Count)];
 
     }
 }
