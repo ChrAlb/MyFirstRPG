@@ -16,6 +16,10 @@ public class BattleManager : MonoBehaviour
     [SerializeField] Transform[] playerPositions, enemyPositions;
     [SerializeField] BattleCharacters[] playerPrefabs, enemiesPrefabs;
 
+    [SerializeField] int currentTurn;
+    [SerializeField] bool waitingForTurn;
+    [SerializeField] GameObject UIButtonHolder;
+
     
     // Start is called before the first frame update
     void Start()
@@ -31,14 +35,38 @@ public class BattleManager : MonoBehaviour
         {
             StartBattle(new string[] {"Mage Master","Warlock", "Blueface" , "Mage" });
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            NextTurn();
+        }
+
+
+        if (isBattleActive)
+        {
+            if(waitingForTurn)
+            {
+                if(activeCharacters[currentTurn].IsPlayer())
+                    UIButtonHolder.SetActive(true); 
+                else
+                    UIButtonHolder.SetActive(false);
+            }
+        }
     }
 
     public void StartBattle(string[] enemiesToSpawn)
     {
-        SettingUpBattle();
-        AddingPlayers();
-        AddingEnemies(enemiesToSpawn);
+        if (!isBattleActive)
+        {
 
+            SettingUpBattle();
+            AddingPlayers();
+            AddingEnemies(enemiesToSpawn);
+
+            waitingForTurn = true;
+            currentTurn = 0; // Random.Range(0, activeCharacters.Count);
+
+        }
     }
 
     private void AddingEnemies(string[] enemiesToSpawn)
@@ -118,17 +146,25 @@ public class BattleManager : MonoBehaviour
 
     private void SettingUpBattle()
     {
-        if (!isBattleActive)
+        
+    isBattleActive = true;
+    GameManager.instance.battleIsActive = true;
+
+    transform.position = new Vector3(
+        Camera.main.transform.position.x,
+        Camera.main.transform.position.y,
+        transform.position.z);
+
+    battleScene.SetActive(true);
+       
+    }
+
+    private void NextTurn()
+    {
+        currentTurn++;
+        if (currentTurn >=    activeCharacters.Count)
         {
-            isBattleActive = true;
-            GameManager.instance.battleIsActive = true;
-
-            transform.position = new Vector3(
-                Camera.main.transform.position.x,
-                Camera.main.transform.position.y,
-                transform.position.z);
-
-            battleScene.SetActive(true);
+            currentTurn = 0;
         }
     }
 }
