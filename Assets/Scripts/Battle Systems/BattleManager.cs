@@ -29,22 +29,54 @@ public class BattleManager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.B))
         {
-            StartBattle(new string[] {"Maga Master","Warlock" });
+            StartBattle(new string[] {"Mage Master","Warlock", "Blueface" , "Mage" });
         }
     }
 
     public void StartBattle(string[] enemiesToSpawn)
     {
         SettingUpBattle();
+        AddingPlayers();
+        AddingEnemies(enemiesToSpawn);
 
-        for(int i = 0; i < GameManager.instance.GetPlayerStats().Length; i++)
+    }
+
+    private void AddingEnemies(string[] enemiesToSpawn)
+    {
+        for (int i = 0; i < enemiesToSpawn.Length; i++)
         {
-            
+            if (enemiesToSpawn[i] != "")
+            {
+                for (int j = 0; j < enemiesPrefabs.Length; j++)
+                {
+                    if (enemiesPrefabs[j].characterName == enemiesToSpawn[i])
+                    {
+                        BattleCharacters newEnemy = Instantiate(
+                            enemiesPrefabs[j],
+                            enemyPositions[i].position,
+                            enemyPositions[i].rotation,
+                            enemyPositions[i]
+                            );
+                        activeCharacters.Add(newEnemy);
+                    }
+
+
+                }
+            }
+
+        }
+    }
+
+    private void AddingPlayers()
+    {
+        for (int i = 0; i < GameManager.instance.GetPlayerStats().Length; i++)
+        {
+
 
             if (GameManager.instance.GetPlayerStats()[i].gameObject.activeInHierarchy)
             {
-               
-                for (int j = 0; j< playerPrefabs.Length; j++)
+
+                for (int j = 0; j < playerPrefabs.Length; j++)
                 {
                     Debug.Log("bevor" + playerPrefabs[j].characterName);
                     if (playerPrefabs[j].characterName == GameManager.instance.GetPlayerStats()[i].PlayerName)
@@ -59,11 +91,29 @@ public class BattleManager : MonoBehaviour
                             );
 
                         activeCharacters.Add(newPlayer);
+                        ImportPlayerStats(i);
+
                     }
                 }
             }
         }
+    }
 
+    private void ImportPlayerStats(int i)
+    {
+        PlayerStats player = GameManager.instance.GetPlayerStats()[i];
+
+        activeCharacters[i].currentHP = player.currentHP;
+        activeCharacters[i].maxHP = player.maxHP;
+
+        activeCharacters[i].currentMana = player.currentMana;
+        activeCharacters[i].maxMana = player.maxMana;
+
+        activeCharacters[i].dexterity = player.dexterity;
+        activeCharacters[i].defence = player.defence;
+
+        activeCharacters[i].wpnwpower = player.weaponPower;
+        activeCharacters[i].armorDefence = player.armorDefence;
     }
 
     private void SettingUpBattle()
