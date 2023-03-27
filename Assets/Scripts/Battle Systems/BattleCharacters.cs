@@ -31,4 +31,9 @@ public class BattleCharacters : MonoBehaviour
 
     }
 
+    public string[] AttackMovesAvailable()
+    {
+        return attacksAvailable;
+    }
+
 }

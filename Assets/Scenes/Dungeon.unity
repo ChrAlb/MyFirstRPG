@@ -1680,6 +1680,31 @@ MonoBehaviour:
   currentTurn: 0
   waitingForTurn: 0
   UIButtonHolder: {fileID: 1701249614}
+  battleMovesList:
+  - moveName: Blue FireBall
+    movePower: 15
+    manaCost: 200
+    theEffectToUse: {fileID: 7895789768678940203, guid: 814f9573303e74044979c481729da6b7, type: 3}
+  - moveName: Laser
+    movePower: 10
+    manaCost: 100
+    theEffectToUse: {fileID: 4277830902361790093, guid: 23914123d07832246801c3587fc4b033, type: 3}
+  - moveName: Lightning
+    movePower: 35
+    manaCost: 120
+    theEffectToUse: {fileID: 7093631097068535018, guid: 559a87a9d5538d74b967d9fcbbf31e2c, type: 3}
+  - moveName: Purple Tentacle
+    movePower: 30
+    manaCost: 300
+    theEffectToUse: {fileID: 4799221566772071935, guid: 40382ac8cee67fd47948ac26edcd488f, type: 3}
+  - moveName: Slash
+    movePower: 10
+    manaCost: 6
+    theEffectToUse: {fileID: 7285654477615155245, guid: 99b24b89f93c68e49ab17cfb3783305f, type: 3}
+  - moveName: Tentacle
+    movePower: 36
+    manaCost: 360
+    theEffectToUse: {fileID: 932897254318479744, guid: f69e97eefe5483240a22f7da510de4e6, type: 3}
 --- !u!4 &865104153
 Transform:
   m_ObjectHideFlags: 0

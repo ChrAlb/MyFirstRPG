@@ -21,6 +21,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] bool waitingForTurn;
     [SerializeField] GameObject UIButtonHolder;
 
+    [SerializeField] BattleMoves[] battleMovesList; 
+
     
     // Start is called before the first frame update
     void Start()
@@ -244,6 +246,20 @@ public class BattleManager : MonoBehaviour
             }
         }
         int selectedPlayerToAttack = players[Random.Range(0, players.Count)];
+
+        int selectedAttack = Random.Range(0, activeCharacters[currentTurn].AttackMovesAvailable().Length);
+
+        for (int i = 0; i < battleMovesList.Length; i++)
+        {
+            if(battleMovesList[i].moveName == activeCharacters[currentTurn].AttackMovesAvailable()[selectedAttack])
+            {
+                Instantiate(
+                    battleMovesList[i].theEffectToUse,
+                    activeCharacters[selectedPlayerToAttack].transform.position,
+                    activeCharacters[selectedPlayerToAttack].transform.rotation
+                    );
+            }
+        }
 
     }
 }
