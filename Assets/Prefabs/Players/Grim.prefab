@@ -95,7 +95,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8640245351599344117}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -155,8 +155,8 @@ MonoBehaviour:
   currentHP: 70
   xpForNextLevel: 
   baseLevelXP: 100
-  maxMana: 120
-  currentMana: 120
+  maxMana: 200
+  currentMana: 200
   dexterity: 50
   defence: 20
   equippedWeaponName: 

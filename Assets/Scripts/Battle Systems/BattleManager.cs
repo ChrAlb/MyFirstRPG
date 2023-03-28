@@ -21,7 +21,9 @@ public class BattleManager : MonoBehaviour
     [SerializeField] bool waitingForTurn;
     [SerializeField] GameObject UIButtonHolder;
 
-    [SerializeField] BattleMoves[] battleMovesList; 
+    [SerializeField] BattleMoves[] battleMovesList;
+
+    [SerializeField] ParticleSystem characterAttackEffect;
 
     
     // Start is called before the first frame update
@@ -263,6 +265,15 @@ public class BattleManager : MonoBehaviour
                 movePower = battleMovesList[i].movePower;
             }
         }
+
+        // Instantiating the effect on the attacking character
+        Instantiate(
+            characterAttackEffect,
+            activeCharacters[currentTurn].transform.position,
+            activeCharacters[currentTurn].transform.rotation
+            ) ;
+
+
         DealDammageToCharacters(selectedPlayerToAttack, movePower);
     }
 
