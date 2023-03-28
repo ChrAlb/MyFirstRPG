@@ -117,10 +117,10 @@ public class BattleManager : MonoBehaviour
 
                 for (int j = 0; j < playerPrefabs.Length; j++)
                 {
-                    Debug.Log("bevor" + playerPrefabs[j].characterName);
+                    //Debug.Log("bevor" + playerPrefabs[j].characterName);
                     if (playerPrefabs[j].characterName == GameManager.instance.GetPlayerStats()[i].PlayerName)
                     {
-                        Debug.Log(GameManager.instance.GetPlayerStats()[i].PlayerName);
+                        //Debug.Log(GameManager.instance.GetPlayerStats()[i].PlayerName);
 
                         BattleCharacters newPlayer = Instantiate(
                             playerPrefabs[j],
@@ -249,6 +249,8 @@ public class BattleManager : MonoBehaviour
 
         int selectedAttack = Random.Range(0, activeCharacters[currentTurn].AttackMovesAvailable().Length);
 
+        int movePower = 0;
+
         for (int i = 0; i < battleMovesList.Length; i++)
         {
             if(battleMovesList[i].moveName == activeCharacters[currentTurn].AttackMovesAvailable()[selectedAttack])
@@ -258,8 +260,37 @@ public class BattleManager : MonoBehaviour
                     activeCharacters[selectedPlayerToAttack].transform.position,
                     activeCharacters[selectedPlayerToAttack].transform.rotation
                     );
+                movePower = battleMovesList[i].movePower;
             }
         }
+        DealDammageToCharacters(selectedPlayerToAttack, movePower);
+    }
 
+    private void DealDammageToCharacters(int selectedCharaterToAttack, int movePower)
+    {
+        float attackPower = activeCharacters[currentTurn].dexterity + activeCharacters[currentTurn].wpnwpower;
+        float defenceAmount = activeCharacters[selectedCharaterToAttack].defence + activeCharacters[selectedCharaterToAttack].armorDefence;
+
+        float damageAmout = (attackPower / defenceAmount) * movePower * Random.Range(0.9f, 1.1f);
+        int damageToGive = (int)damageAmout;
+
+        damageToGive = CalculateCritical(damageToGive);
+        
+        Debug.Log(activeCharacters[currentTurn].name + " just dealt " + damageAmout + "(" + damageToGive + ")"
+            + ") to " + activeCharacters[selectedCharaterToAttack]);
+
+        activeCharacters[selectedCharaterToAttack].TakeHPDamage(damageToGive);
+
+    }
+
+    private int CalculateCritical(int damageToGive)
+    {
+        if(Random.value <= 0.1f)
+        {
+            Debug.Log("CRITICAL HIT!!! instead of" + damageToGive + " points. " + (damageToGive * 2) + " was dealt");
+            return damageToGive * 2;
+        }
+        else
+            return damageToGive;
     }
 }
