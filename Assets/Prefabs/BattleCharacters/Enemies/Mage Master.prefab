@@ -98,7 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  attacksAvailable: []
+  attacksAvailable:
+  - Tentacle
+  - Purple Tentacle
+  - Laser
+  - Lightning
   characterName: Mage Master
   currentHP: 666
   maxHP: 666

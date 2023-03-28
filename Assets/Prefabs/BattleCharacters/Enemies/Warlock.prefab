@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  attacksAvailable: []
+  attacksAvailable:
+  - Tentacle
+  - Lightning
+  - Laser
   characterName: Warlock
   currentHP: 200
   maxHP: 200

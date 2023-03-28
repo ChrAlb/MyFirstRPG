@@ -98,7 +98,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  attacksAvailable: []
+  attacksAvailable:
+  - Slash
+  - Blue FireBall
+  - Laser
+  - Lightning
   characterName: Blueface
   currentHP: 200
   maxHP: 200
