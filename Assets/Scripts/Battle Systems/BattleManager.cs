@@ -25,6 +25,8 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] ParticleSystem characterAttackEffect;
 
+    [SerializeField] CharacterDamageGUI damageText; 
+
     
     // Start is called before the first frame update
     void Start()
@@ -275,6 +277,8 @@ public class BattleManager : MonoBehaviour
 
 
         DealDammageToCharacters(selectedPlayerToAttack, movePower);
+
+        
     }
 
     private void DealDammageToCharacters(int selectedCharaterToAttack, int movePower)
@@ -291,6 +295,14 @@ public class BattleManager : MonoBehaviour
             + ") to " + activeCharacters[selectedCharaterToAttack]);
 
         activeCharacters[selectedCharaterToAttack].TakeHPDamage(damageToGive);
+
+        CharacterDamageGUI characterDamageText = Instantiate(
+            damageText,
+            activeCharacters[selectedCharaterToAttack].transform.position,
+            activeCharacters[selectedCharaterToAttack].transform.rotation
+                    );
+
+            characterDamageText.SetDammage(damageToGive);
 
     }
 
