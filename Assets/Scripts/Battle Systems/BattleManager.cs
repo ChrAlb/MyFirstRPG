@@ -232,6 +232,17 @@ public class BattleManager : MonoBehaviour
             GameManager.instance.battleIsActive = false;
             isBattleActive = false;
         }
+        else
+        {
+            while(activeCharacters[currentTurn].currentHP == 0)
+            {
+                currentTurn++;
+                if(currentTurn >= activeCharacters.Count)
+                {
+                    currentTurn = 0;
+                }
+            }
+        }
     }
 
     public IEnumerator EnemyMoveCoroutine()
@@ -347,12 +358,12 @@ public class BattleManager : MonoBehaviour
                 }
                 else
                 {
-                    playersNameText[i].gameObject.SetActive(false); 
+                    playerBattleStats[i].gameObject.SetActive(false); 
                 }
             }
             else
             {
-                    playersNameText[i].gameObject.SetActive(false);
+                    playerBattleStats[i].gameObject.SetActive(false);
             }
         }
     }

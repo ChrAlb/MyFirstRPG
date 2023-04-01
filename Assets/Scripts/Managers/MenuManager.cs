@@ -80,7 +80,7 @@ public class MenuManager : MonoBehaviour
 
             characterImage[i].sprite = playerStats[i].characterImage;
 
-            //Bei Szenenwechsel von 2 zu 1 geht das nicht mehr?
+            
             xpText[i].text = playerStats[i].currentXP.ToString() + "/" + playerStats[i].xpForNextLevel[playerStats[i].playerLevel];
             xpSlider[i].maxValue = playerStats[i].xpForNextLevel[playerStats[i].playerLevel];
             xpSlider[i].value = playerStats[i].currentXP;
