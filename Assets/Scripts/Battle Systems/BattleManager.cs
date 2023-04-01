@@ -33,6 +33,10 @@ public class BattleManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] playersNameText;
     [SerializeField] Slider[] playerHealthSlider, playerManaSlider;
 
+    [SerializeField] GameObject enemyTargetPanel;
+
+    [SerializeField] BattleTargetButtons[] targetButtons;
+
 
     // Start is called before the first frame update
     void Start()
@@ -290,6 +294,35 @@ public class BattleManager : MonoBehaviour
         UpdatePlayerStats();
     }
 
+    public void OpenTargetMenu(string moveName)
+    {
+        enemyTargetPanel.SetActive(true);
+
+        List<int> Enemies  = new List<int>();
+
+        for (int i=0; i < activeCharacters.Count;i++)
+        {
+            if(!activeCharacters[i].IsPlayer())
+            {
+                Enemies.Add(i);
+            }
+        }
+
+        //Debug.Log(Enemies.Count);
+
+        for (int i=0; i< targetButtons.Length; i++)
+        {
+            if(Enemies.Count > i)
+            {
+                targetButtons[i].gameObject.SetActive(true);
+                targetButtons[i].moveName = moveName;
+                targetButtons[i].activeBattleTarget = Enemies[i];
+                targetButtons[i].targetName.text = activeCharacters[Enemies[i]].characterName;
+            }
+        }
+
+    }
+
     private void InstantiateEffectOnAttackingCharacter()
     {
         Instantiate(
@@ -368,9 +401,9 @@ public class BattleManager : MonoBehaviour
     }
 
 
-    public void PlayerAttack(string moveName) //, int selectEnemyTarget)
+    public void PlayerAttack(string moveName, int selectEnemyTarget)
     {
-        int selectEnemyTarget = 3;
+        
         int movePower = 0;
 
         for (int i = 0; i < battleMovesList.Length; i++)
@@ -387,6 +420,8 @@ public class BattleManager : MonoBehaviour
         DealDammageToCharacters(selectEnemyTarget, movePower);
 
         NextTurn();
+
+        enemyTargetPanel.SetActive(false);
     }
 
     private int GettingMovePowerAndEffectInstantion(int selectCharacterTarget, int i)
