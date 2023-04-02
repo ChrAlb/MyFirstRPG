@@ -37,6 +37,9 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] BattleTargetButtons[] targetButtons;
 
+    public GameObject magicChoicePanel;
+    [SerializeField] BattleMagicButtons[] magicButtons;
+
 
     // Start is called before the first frame update
     void Start()
@@ -434,5 +437,35 @@ public class BattleManager : MonoBehaviour
                );
         movePower = battleMovesList[i].movePower;
         return movePower;
+    }
+
+    public void OpenMagicPanel()
+    {
+        magicChoicePanel.SetActive(true);
+
+        for (int i = 0; i < magicButtons.Length; i++)
+        {
+            if (activeCharacters[currentTurn].AttackMovesAvailable().Length > i)
+            {
+                magicButtons[i].gameObject.SetActive(true);
+                magicButtons[i].spellName = GetCurrentActiveCharacter().AttackMovesAvailable()[i];
+                magicButtons[i].spellNameText.text = magicButtons[i].spellName;
+
+                for (int j = 0; j < battleMovesList.Length; j++)
+                {
+                    if (battleMovesList[j].moveName == magicButtons[i].spellName)
+                    {
+                        magicButtons[i].spellCost = battleMovesList[j].manaCost;
+                        magicButtons[i].spellCostText.text = magicButtons[i].spellCost.ToString();
+
+                    }
+                }
+            }
+        }
+    }
+
+    public BattleCharacters GetCurrentActiveCharacter()
+    {
+        return activeCharacters[currentTurn];
     }
 }

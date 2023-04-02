@@ -98,7 +98,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  attacksAvailable: []
+  attacksAvailable:
+  - Blue FireBall
+  - Laser
+  - Purple Tentacle
+  - Lightning
+  - Tentacle
   characterName: Jimmy
   currentHP: 0
   maxHP: 0
