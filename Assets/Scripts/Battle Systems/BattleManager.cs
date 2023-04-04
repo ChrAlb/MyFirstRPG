@@ -43,6 +43,8 @@ public class BattleManager : MonoBehaviour
 
     public BattleNotifications battleNotice;
 
+    [SerializeField] float chanceToRunAway = 0.5f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -474,5 +476,20 @@ public class BattleManager : MonoBehaviour
     public BattleCharacters GetCurrentActiveCharacter()
     {
         return activeCharacters[currentTurn];
+    }
+
+    public void RunAway()
+    {
+        if(Random.value > chanceToRunAway)
+        {
+            isBattleActive = false;
+            battleScene.SetActive(false);
+        }
+        else
+        {
+            NextTurn();
+            battleNotice.SetText("There is no escape !");
+            battleNotice.Activate();
+        }
     }
 }
