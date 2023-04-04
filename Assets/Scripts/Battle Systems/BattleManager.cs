@@ -38,7 +38,10 @@ public class BattleManager : MonoBehaviour
     [SerializeField] BattleTargetButtons[] targetButtons;
 
     public GameObject magicChoicePanel;
+
     [SerializeField] BattleMagicButtons[] magicButtons;
+
+    public BattleNotifications battleNotice;
 
 
     // Start is called before the first frame update
@@ -460,6 +463,10 @@ public class BattleManager : MonoBehaviour
 
                     }
                 }
+            }
+            else
+            {
+                magicButtons[i].gameObject.SetActive(false);
             }
         }
     }

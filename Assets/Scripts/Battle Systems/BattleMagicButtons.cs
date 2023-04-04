@@ -19,6 +19,12 @@ public class BattleMagicButtons : MonoBehaviour
             BattleManager.instance.OpenTargetMenu(spellName);
             BattleManager.instance.GetCurrentActiveCharacter().currentMana -= spellCost;   
         }
+        else
+        {
+            BattleManager.instance.battleNotice.SetText("WE DON'T HAVE ENOUGH MANA!!!");
+            BattleManager.instance.battleNotice.Activate();
+            BattleManager.instance.magicChoicePanel.SetActive(false);
+        }
         
     }
 }
