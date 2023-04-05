@@ -36,6 +36,13 @@ public class ItemButton : MonoBehaviour
 
             }
         }
+
+        if(BattleManager.instance.itemsToUseMenu.activeInHierarchy)
+        {
+
+            BattleManager.instance.SelectedItemToUse(itemOnButton);
+
+        }
         
 
     }

@@ -37,6 +37,12 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] BattleTargetButtons[] targetButtons;
 
+    public GameObject itemsToUseMenu;
+    [SerializeField] ItemsManager selectedItem;
+    [SerializeField] GameObject itemSlotContainer;
+    [SerializeField] Transform itemSlotContainerParent;
+    [SerializeField] TextMeshProUGUI itemName, itemDescripton;
+
     public GameObject magicChoicePanel;
 
     [SerializeField] BattleMagicButtons[] magicButtons;
@@ -491,5 +497,41 @@ public class BattleManager : MonoBehaviour
             battleNotice.SetText("There is no escape !");
             battleNotice.Activate();
         }
+    }
+
+    public void UpdateItemsInventory()
+    {
+        itemsToUseMenu.SetActive(true);
+        
+        foreach (Transform itemSlot in itemSlotContainerParent)
+
+        {
+            Destroy(itemSlot.gameObject);
+        }
+
+
+        foreach (ItemsManager item in Inventory.instance.GetItemList())
+        {
+            RectTransform itemSlot = Instantiate(itemSlotContainer, itemSlotContainerParent).GetComponent<RectTransform>();
+
+            Image itemImage = itemSlot.Find("Image").GetComponent<Image>();
+            itemImage.sprite = item.itemsImage;
+
+            TextMeshProUGUI itemsamountText = itemSlot.Find("Amount Text").GetComponent<TextMeshProUGUI>();
+            if (item.amount > 1)
+                itemsamountText.text = item.amount.ToString();
+            else
+                itemsamountText.text = "";
+
+            itemSlot.GetComponent<ItemButton>().itemOnButton = item;
+
+        }
+    }
+
+    public void SelectedItemToUse(ItemsManager itemToUse)
+    {
+        selectedItem = itemToUse;
+        itemName.text = itemToUse.itemName;
+        itemDescripton.text = itemToUse.itemDescription;
     }
 }
