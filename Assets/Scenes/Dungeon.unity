@@ -359,22 +359,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 515256076}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 865104152}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: UseItemButton
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 515256076}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: CloseCharacterPanel
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3922,7 +3910,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7238670594717354044, guid: ad33d6c303644f54f84097ec60d86694, type: 3}
       propertyPath: currentMana
-      value: 1000
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8640245351599344117, guid: ad33d6c303644f54f84097ec60d86694, type: 3}
       propertyPath: m_Name
@@ -4343,9 +4331,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 515256076}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: DiscardItem
+      - m_Target: {fileID: 865104152}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: CloseCharacterChoice
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4393,37 +4381,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592268487}
   m_CullTransparentMesh: 1
---- !u!1 &612816038
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 612816039}
-  m_Layer: 0
-  m_Name: 'Position 4 '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &612816039
+--- !u!4 &612816039 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6600188774706836440, guid: f088967060461be47ad79acbfb25045f, type: 3}
+  m_PrefabInstance: {fileID: 6600188774094546815}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612816038}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3, y: 4.6, z: 0.3359908}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 695281006}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620041582
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,41 +4728,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
---- !u!1 &695281005
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 695281006}
-  m_Layer: 0
-  m_Name: Enemies Positions
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &695281006
+--- !u!4 &695281006 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+  m_PrefabInstance: {fileID: 6600188774094546815}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 695281005}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.8210013, y: -0.65581656, z: -0.3359908}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1467035963}
-  - {fileID: 1997220092}
-  - {fileID: 1849540704}
-  - {fileID: 612816039}
-  m_Father: {fileID: 1408393295}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &704095393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5477,6 +5409,11 @@ MonoBehaviour:
   - {fileID: 11510891}
   battleNotice: {fileID: 1996863046}
   chanceToRunAway: 0.5
+  characterChoicePanel: {fileID: 1872754502}
+  playerNames:
+  - {fileID: 1585691869}
+  - {fileID: 1571052522}
+  - {fileID: 908092832}
 --- !u!4 &865104153
 Transform:
   m_ObjectHideFlags: 0
@@ -5768,9 +5705,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 908092830}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85859, y: 0.7512748, z: 0.85859}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1960693802}
@@ -8126,37 +8063,11 @@ RectTransform:
   m_AnchoredPosition: {x: -10, y: 0}
   m_SizeDelta: {x: -30.7868, y: -36}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1467035962
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1467035963}
-  m_Layer: 0
-  m_Name: Position 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1467035963
+--- !u!4 &1467035963 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6600188775481742916, guid: f088967060461be47ad79acbfb25045f, type: 3}
+  m_PrefabInstance: {fileID: 6600188774094546815}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467035962}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.6, y: -1.1, z: 0.3359908}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 695281006}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1490194119
 GameObject:
   m_ObjectHideFlags: 0
@@ -8545,9 +8456,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571052520}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85859, y: 0.7512748, z: 0.85859}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1798973624}
@@ -9097,9 +9008,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 515256076}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: OpenCharacterChoicePanel
+      - m_Target: {fileID: 865104152}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: OpenCharactesMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11047,37 +10958,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840871396}
   m_CullTransparentMesh: 1
---- !u!1 &1849540703
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1849540704}
-  m_Layer: 0
-  m_Name: Position 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1849540704
+--- !u!4 &1849540704 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6600188775871080223, guid: f088967060461be47ad79acbfb25045f, type: 3}
+  m_PrefabInstance: {fileID: 6600188774094546815}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1849540703}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.6, y: 3.4, z: 0.3359908}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 695281006}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1867772034
 GameObject:
   m_ObjectHideFlags: 0
@@ -12196,18 +12081,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 515256076}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: UseItem
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 515256076}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: CloseCharacterPanel
         m_Mode: 1
         m_Arguments:
@@ -12382,37 +12255,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1996863045}
   m_CullTransparentMesh: 1
---- !u!1 &1997220091
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1997220092}
-  m_Layer: 0
-  m_Name: Position 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1997220092
+--- !u!4 &1997220092 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6600188776023461763, guid: f088967060461be47ad79acbfb25045f, type: 3}
+  m_PrefabInstance: {fileID: 6600188774094546815}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997220091}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 0.1, z: 0.3359908}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 695281006}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008911607
 GameObject:
   m_ObjectHideFlags: 0
@@ -12936,22 +12783,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 515256076}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: UseItem
+      - m_Target: {fileID: 865104152}
+        m_TargetAssemblyTypeName: BattleManager, Assembly-CSharp
+        m_MethodName: UseItemButton
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 515256076}
-        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
-        m_MethodName: CloseCharacterPanel
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13370,6 +13205,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5458413738875576328, guid: 5e0d365983d7e2c41919f6257ef9e322, type: 3}
   m_PrefabInstance: {fileID: 722871191686591934}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6600188774094546815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1408393295}
+    m_Modifications:
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8210013
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.65581656
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.3359908
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094673, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600188774777094674, guid: f088967060461be47ad79acbfb25045f, type: 3}
+      propertyPath: m_Name
+      value: Enemies Positions
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f088967060461be47ad79acbfb25045f, type: 3}
 --- !u!66 &7256077710888842691
 CompositeCollider2D:
   m_ObjectHideFlags: 0

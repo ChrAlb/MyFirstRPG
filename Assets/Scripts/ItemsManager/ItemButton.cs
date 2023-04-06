@@ -20,7 +20,14 @@ public class ItemButton : MonoBehaviour
 
         }
 
-        if(ShopManager.instance.shopMenu.activeInHierarchy)
+        if (BattleManager.instance.itemsToUseMenu.activeInHierarchy)
+        {
+            Debug.Log("Im Battle Manager drin");
+            BattleManager.instance.SelectedItemToUse(itemOnButton);
+
+        }
+
+        if (ShopManager.instance.shopMenu.activeInHierarchy)
         {
 
             if (ShopManager.instance.buyPanel.activeInHierarchy)
@@ -37,12 +44,7 @@ public class ItemButton : MonoBehaviour
             }
         }
 
-        if(BattleManager.instance.itemsToUseMenu.activeInHierarchy)
-        {
-
-            BattleManager.instance.SelectedItemToUse(itemOnButton);
-
-        }
+      
         
 
     }
