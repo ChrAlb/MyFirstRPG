@@ -52,7 +52,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] float chanceToRunAway = 0.5f;
 
     [SerializeField] GameObject characterChoicePanel;
-    [SerializeField] TextMeshProUGUI[] playerNames;
+    [SerializeField] TextMeshProUGUI[] plNames;
 
 
     // Start is called before the first frame update
@@ -549,17 +549,19 @@ public class BattleManager : MonoBehaviour
                 for (int i = 0; i < activeCharacters.Count; i++)
                 {
 
-                if (activeCharacters[i].IsPlayer())
-                    {
+                    if (activeCharacters[i].IsPlayer())
+                        {
+                            
+                            PlayerStats activePlayer = GameManager.instance.GetPlayerStats()[i];
 
-                        PlayerStats activePlayer = GameManager.instance.GetPlayerStats()[i];
+                            //Debug.Log(activePlayer.PlayerName);
 
-                        playerNames[i].text = activePlayer.name;
+                            plNames[i].text = activePlayer.PlayerName;
 
-                        bool activePlayerInHierarchy = activePlayer.gameObject.activeInHierarchy;
-                        playerNames[i].transform.parent.gameObject.SetActive(activePlayerInHierarchy);
+                           bool activePlayerInHierarchy = activePlayer.gameObject.activeInHierarchy;
+                            plNames[i].transform.parent.gameObject.SetActive(activePlayerInHierarchy);
+                        }
                     }
-                }
             
         }
         else
@@ -572,6 +574,7 @@ public class BattleManager : MonoBehaviour
 
     public void UseItemButton(int selectedPlayer)
     {
+        Debug.Log(selectedPlayer);
         activeCharacters[selectedPlayer].UseItemInBattle(selectedItem);
         Inventory.instance.RemoveItem(selectedItem);
 
