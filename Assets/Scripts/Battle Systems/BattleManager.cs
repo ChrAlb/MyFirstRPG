@@ -229,7 +229,10 @@ public class BattleManager : MonoBehaviour
 
             if (activeCharacters[i].currentHP == 0)
             {
-                //killCharacter;
+                if (activeCharacters[i].IsPlayer() &&  !activeCharacters[i].isDead )
+                {
+                    activeCharacters[i].KillPlayer();
+                }
             }
             else
             {
@@ -493,6 +496,7 @@ public class BattleManager : MonoBehaviour
         {
             isBattleActive = false;
             battleScene.SetActive(false);
+            GameManager.instance.battleIsActive = false;
         }
         else
         {

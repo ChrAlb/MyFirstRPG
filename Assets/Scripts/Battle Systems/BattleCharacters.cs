@@ -13,6 +13,9 @@ public class BattleCharacters : MonoBehaviour
     public int currentHP, maxHP, currentMana, maxMana, dexterity, defence, wpnwpower, armorDefence;
     public bool isDead;
 
+    public Sprite deadSprite;
+    public ParticleSystem deathParticles;
+
     public bool IsPlayer()
     {
         return isPlayer;
@@ -72,6 +75,16 @@ public class BattleCharacters : MonoBehaviour
     private void AddHP (int amountOfAffect)
     {
         currentMana += amountOfAffect;
+    }
+
+    public void KillPlayer()
+    {
+        if(deadSprite)
+        {
+            GetComponent<SpriteRenderer>().sprite = deadSprite;
+            Instantiate(deathParticles,transform.position, transform.rotation);
+            isDead = true;
+        }
     }
 
 }
