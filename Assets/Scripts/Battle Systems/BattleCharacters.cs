@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,7 +32,31 @@ public class BattleCharacters : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!isPlayer && isDead)
+        {
+            FadeOutEnemy();
+        }
+    }
 
+    private void FadeOutEnemy()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(
+            Mathf.MoveTowards(GetComponent<SpriteRenderer>().color.r, 1f, 0.3f * Time.deltaTime),
+            Mathf.MoveTowards(GetComponent<SpriteRenderer>().color.g, 0f, 0.3f * Time.deltaTime),
+            Mathf.MoveTowards(GetComponent<SpriteRenderer>().color.b, 0f, 0.3f * Time.deltaTime),
+            Mathf.MoveTowards(GetComponent<SpriteRenderer>().color.a, 0f, 0.3f * Time.deltaTime)
+            );
+
+        if(GetComponent<SpriteRenderer>().color.a == 0)
+        {
+            gameObject.SetActive(false);
+
+        }
+    }
+
+    public void KillEnemy()
+    {
+        isDead = true;
     }
 
     public string[] AttackMovesAvailable()
