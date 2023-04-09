@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -54,6 +55,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] GameObject characterChoicePanel;
     [SerializeField] TextMeshProUGUI[] plNames;
 
+    [SerializeField] string gameOverSzene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +70,8 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            StartBattle(new string[] { "Mage Master", "Warlock", "Blueface", "Mage" });
+            StartBattle(new string[] {  "Blueface", "Mage" });
+            //StartBattle(new string[] { "Mage Master", "Warlock", "Blueface", "Mage" });
         }
 
         if (Input.GetKeyDown(KeyCode.N))
@@ -251,15 +255,18 @@ public class BattleManager : MonoBehaviour
         if (allEnemiesAreDead || allPlayerAreDead)
         {
             if (allEnemiesAreDead)
-                print("WE WON !!!!");
+            {
+                battleNotice.SetText("WE WON!!!");
+                battleNotice.Activate();
+                StartCoroutine(EndBattleCoroutine());
+            }
+                
             else
                 if (allPlayerAreDead)
-                print("WE LOST!!");
-
-
-            battleScene.SetActive(false);
-            GameManager.instance.battleIsActive = false;
-            isBattleActive = false;
+            {
+                StartCoroutine(GameOverCoroutine());
+            }
+                
         }
         else
         {
@@ -503,9 +510,7 @@ public class BattleManager : MonoBehaviour
     {
         if(Random.value > chanceToRunAway)
         {
-            isBattleActive = false;
-            battleScene.SetActive(false);
-            GameManager.instance.battleIsActive = false;
+            StartCoroutine(EndBattleCoroutine());
         }
         else
         {
@@ -603,6 +608,53 @@ public class BattleManager : MonoBehaviour
     {
         characterChoicePanel.SetActive(false);  
         itemsToUseMenu.SetActive(false);    
+    }
+
+    public IEnumerator EndBattleCoroutine()
+    {
+        isBattleActive = false;
+        UIButtonHolder.SetActive(false);
+        enemyTargetPanel.SetActive(false);
+        magicChoicePanel.SetActive(false);
+        //battleNotice.SetText("WE WON!!!");
+        //battleNotice.Activate();
+
+        yield return new WaitForSeconds(3);
+
+        foreach (BattleCharacters playerInBattle in activeCharacters)
+        {
+            if (playerInBattle.IsPlayer())
+                {
+                    foreach (PlayerStats playerWithStats in GameManager.instance.GetPlayerStats())
+                    {
+                       if(playerInBattle.characterName == playerWithStats.PlayerName)
+                        {
+                            playerWithStats.currentHP = playerInBattle.currentHP;
+                            playerWithStats.currentMana = playerInBattle.currentMana;
+                        }
+
+                    }
+                }
+            Destroy(playerInBattle.gameObject);
+        }
+
+        battleScene.SetActive(false);
+        activeCharacters.Clear();
+        currentTurn = 0;
+        GameManager.instance.battleIsActive = false;
+    }
+
+    public IEnumerator GameOverCoroutine()
+    {
+        battleNotice.SetText("WE LOST!!!");
+        battleNotice.Activate();
+
+        yield return new WaitForSeconds(3f);
+
+        isBattleActive=false;
+
+        SceneManager.LoadScene(gameOverSzene);
+
     }
     
 }
