@@ -2189,7 +2189,9 @@ MonoBehaviour:
     - {fileID: 3073927062769135970, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
     - {fileID: 6207164500207678047, guid: 027c687617b2a504680c1671c80c5417, type: 3}
     - {fileID: 5249752399281744632, guid: b7a52a3bd44174c4ea7b4526b14f9f31, type: 3}
-  activateOnEnter: 1
+  activateOnEnter: 0
+  timeBetweenBattles: 1
+  deactivateAfterStarting: 1
 --- !u!1001 &6042710922740100482
 PrefabInstance:
   m_ObjectHideFlags: 0

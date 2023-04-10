@@ -513,7 +513,7 @@ public class BattleManager : MonoBehaviour
     {
         if(Random.value > chanceToRunAway)
         {
-            runInEditMode = true;
+            runningAway = true;
             StartCoroutine(EndBattleCoroutine());
         }
         else
