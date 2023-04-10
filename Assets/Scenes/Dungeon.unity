@@ -2092,6 +2092,104 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 027c687617b2a504680c1671c80c5417, type: 3}
+--- !u!1 &2117284968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2117284970}
+  - component: {fileID: 2117284969}
+  - component: {fileID: 2117284971}
+  m_Layer: 0
+  m_Name: BattleZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &2117284969
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117284968}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.26754856, y: -0.098570704}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.689356, y: 3.90079}
+  m_EdgeRadius: 0
+--- !u!4 &2117284970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117284968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.85, y: 4.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2117284971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117284968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88ef6e86bbeebc4ab19c775c827b9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  availableBattles:
+  - enemies:
+    - Blueface
+    - Warlock
+    rewardXP: 200
+    rewardItems:
+    - {fileID: 3073927062769135970, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
+  - enemies:
+    - Blueface
+    - Warlock
+    - Mage
+    - Blueface
+    rewardXP: 600
+    rewardItems:
+    - {fileID: 9047609241274822485, guid: a3a23538bb4ab674fa605891a8c3e9d2, type: 3}
+    - {fileID: 5249752399281744632, guid: b7a52a3bd44174c4ea7b4526b14f9f31, type: 3}
+  - enemies:
+    - Mage Master
+    - Mage
+    - Mage
+    rewardXP: 1500
+    rewardItems:
+    - {fileID: 7412053385244814429, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
+    - {fileID: 3073927062769135970, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
+    - {fileID: 6207164500207678047, guid: 027c687617b2a504680c1671c80c5417, type: 3}
+    - {fileID: 5249752399281744632, guid: b7a52a3bd44174c4ea7b4526b14f9f31, type: 3}
+  activateOnEnter: 1
 --- !u!1001 &6042710922740100482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2137,6 +2235,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6042710923538046106, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
       propertyPath: gameOverSzene
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042710923538046106, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
+      propertyPath: XPRewardAmount
       value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 6042710923538046106, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
