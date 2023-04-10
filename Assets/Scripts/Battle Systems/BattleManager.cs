@@ -63,6 +63,8 @@ public class BattleManager : MonoBehaviour
 
     private bool canRun;
 
+    
+
 
     // Start is called before the first frame update
     void Start()

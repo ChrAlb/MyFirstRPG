@@ -15,7 +15,10 @@ public class BattleInstantiator : MonoBehaviour
     [SerializeField] bool deactivateAfterStarting;
 
     [SerializeField]  bool canRunAway;
-   
+
+    [SerializeField] bool shouldCompleteQuest;
+    public string questToComplete;
+
 
     private void Start()
     {
@@ -49,6 +52,9 @@ public class BattleInstantiator : MonoBehaviour
 
         BattleManager.instance.itemsReward = availableBattles[selectedBattle].rewardItems;
         BattleManager.instance.XPRewardAmount = availableBattles[selectedBattle].rewardXP;
+
+        BattleRewardHandler.instance.markQuestComplete = shouldCompleteQuest;
+        BattleRewardHandler.instance.questToComplete = questToComplete;
 
         yield return new WaitForSeconds(1.5f);
 

@@ -745,7 +745,10 @@ MonoBehaviour:
     - {fileID: 6207164500207678047, guid: 027c687617b2a504680c1671c80c5417, type: 3}
   activateOnEnter: 0
   timeBetweenBattles: 2
-  deactivateAfterStarting: 0
+  deactivateAfterStarting: 1
+  canRunAway: 0
+  shouldCompleteQuest: 1
+  questToComplete: Kill BIG DRAGON BOSS
 --- !u!212 &642501859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1713,6 +1716,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4157149533872278718, guid: aa1f45d41bfd6c3418cef0395e7c74e5, type: 3}
+      propertyPath: questNames.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157149533872278718, guid: aa1f45d41bfd6c3418cef0395e7c74e5, type: 3}
+      propertyPath: questNames.Array.data[5]
+      value: Kill BIG DRAGON BOSS
+      objectReference: {fileID: 0}
     - target: {fileID: 7078068903965757866, guid: aa1f45d41bfd6c3418cef0395e7c74e5, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -2042,6 +2053,8 @@ MonoBehaviour:
   - {fileID: 7412053385244814429, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
   - {fileID: 6207164500207678047, guid: 027c687617b2a504680c1671c80c5417, type: 3}
   xpReward: 0
+  markQuestComplete: 0
+  questToComplete: 
 --- !u!1 &1843492641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,6 +2347,9 @@ MonoBehaviour:
   activateOnEnter: 0
   timeBetweenBattles: 1
   deactivateAfterStarting: 1
+  canRunAway: 1
+  shouldCompleteQuest: 0
+  questToComplete: 
 --- !u!1001 &6042710922740100482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2408,6 +2424,14 @@ PrefabInstance:
     - target: {fileID: 6042710923538046107, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042710923538046107, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042710923538046107, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6042710923538046107, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
       propertyPath: m_LocalPosition.x
