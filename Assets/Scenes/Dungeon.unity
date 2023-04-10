@@ -1017,7 +1017,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1822504915}
         m_TargetAssemblyTypeName: BattleRewardHandler, Assembly-CSharp
-        m_MethodName: CloseButton
+        m_MethodName: CloseRewardScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1201,8 +1201,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278979596
-  m_fontColor: {r: 0.047169805, g: 0.04605731, b: 0.04605731, a: 1}
+    rgba: 4278722545
+  m_fontColor: {r: 0.9433962, g: 0.12299122, b: 0.031149892, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1967,8 +1967,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278979596
-  m_fontColor: {r: 0.047169805, g: 0.04605731, b: 0.04605731, a: 1}
+    rgba: 4279178229
+  m_fontColor: {r: 0.9622642, g: 0.07634152, b: 0.05900679, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2135,6 +2135,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6042710923538046106, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
+      propertyPath: gameOverSzene
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042710923538046106, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
+      propertyPath: itemsReward.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6042710923538046106, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
+      propertyPath: itemsReward.Array.data[0]
+      value: 
+      objectReference: {fileID: 7412053385244814429, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
+    - target: {fileID: 6042710923538046106, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
+      propertyPath: itemsReward.Array.data[1]
+      value: 
+      objectReference: {fileID: 3073927062769135970, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
     - target: {fileID: 6042710923538046107, guid: 317ba25accd0155439e48cc3fd55eede, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -57,6 +57,10 @@ public class BattleManager : MonoBehaviour
 
     [SerializeField] string gameOverSzene;
 
+    private bool runningAway;
+    public int XPRewardAmount;
+    public ItemsManager[] itemsReward;
+
 
     // Start is called before the first frame update
     void Start()
@@ -256,8 +260,7 @@ public class BattleManager : MonoBehaviour
         {
             if (allEnemiesAreDead)
             {
-                battleNotice.SetText("WE WON!!!");
-                battleNotice.Activate();
+                
                 StartCoroutine(EndBattleCoroutine());
             }
                 
@@ -510,6 +513,7 @@ public class BattleManager : MonoBehaviour
     {
         if(Random.value > chanceToRunAway)
         {
+            runInEditMode = true;
             StartCoroutine(EndBattleCoroutine());
         }
         else
@@ -616,8 +620,13 @@ public class BattleManager : MonoBehaviour
         UIButtonHolder.SetActive(false);
         enemyTargetPanel.SetActive(false);
         magicChoicePanel.SetActive(false);
-        //battleNotice.SetText("WE WON!!!");
-        //battleNotice.Activate();
+
+        if(!runningAway)
+        {
+            battleNotice.SetText("WE WON!!!");
+            battleNotice.Activate();
+        }
+        
 
         yield return new WaitForSeconds(3);
 
@@ -640,8 +649,19 @@ public class BattleManager : MonoBehaviour
 
         battleScene.SetActive(false);
         activeCharacters.Clear();
+
+        if(runningAway)
+        {
+            GameManager.instance.battleIsActive = false;
+            runningAway = false;
+        }
+        else
+        {
+            BattleRewardHandler.instance.OpenRewardScreen(XPRewardAmount, itemsReward);
+        }
+
         currentTurn = 0;
-        GameManager.instance.battleIsActive = false;
+        
     }
 
     public IEnumerator GameOverCoroutine()

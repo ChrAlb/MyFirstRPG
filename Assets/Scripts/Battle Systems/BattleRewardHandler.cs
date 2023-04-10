@@ -13,13 +13,20 @@ public class BattleRewardHandler : MonoBehaviour
     [SerializeField] ItemsManager[] rewardItems;
     [SerializeField] int xpReward;
 
+    private void Start()
+    {
+        instance = this;        
+    }
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Y))
+       /* 
+       if(Input.GetKeyDown(KeyCode.Y))
         {
             OpenRewardScreen(15000, rewardItems);
 
         }
+       */
     }
     public void OpenRewardScreen(int xpEarned, ItemsManager[] itemsEarned)
     {
@@ -37,9 +44,22 @@ public class BattleRewardHandler : MonoBehaviour
         rewardScreen.SetActive(true);
     }
 
-    public void CloseButton()
+    public void CloseRewardScreen()
     {
+        foreach(PlayerStats activePlayer in GameManager.instance.GetPlayerStats())
+        {
+            activePlayer.AddXP(xpReward);
+
+
+        }
+
+        foreach (ItemsManager itemsRewarded in rewardItems)
+        {
+            Inventory.instance.AddItems(itemsRewarded);
+        }
+        
         rewardScreen.SetActive(false);
+        GameManager.instance.battleIsActive = false;
     }
 
 }
