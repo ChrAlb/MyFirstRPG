@@ -14,6 +14,9 @@ public class BattleInstantiator : MonoBehaviour
 
     [SerializeField] bool deactivateAfterStarting;
 
+    [SerializeField]  bool canRunAway;
+   
+
     private void Start()
     {
         battleCounter = Random.Range(timeBetweenBattles *0.5f, timeBetweenBattles * 1.5f);
@@ -51,7 +54,7 @@ public class BattleInstantiator : MonoBehaviour
 
         MenuManager.Instance.FadeOut();
 
-        BattleManager.instance.StartBattle(availableBattles[selectedBattle].enemies);
+        BattleManager.instance.StartBattle(availableBattles[selectedBattle].enemies, canRunAway);
 
         if(deactivateAfterStarting)
         {

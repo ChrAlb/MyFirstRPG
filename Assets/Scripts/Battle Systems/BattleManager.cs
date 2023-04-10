@@ -61,6 +61,8 @@ public class BattleManager : MonoBehaviour
     public int XPRewardAmount;
     public ItemsManager[] itemsReward;
 
+    private bool canRun;
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,7 +76,7 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
-            StartBattle(new string[] {  "Blueface", "Mage" });
+            StartBattle(new string[] {  "Blueface", "Mage" }, true);
             //StartBattle(new string[] { "Mage Master", "Warlock", "Blueface", "Mage" });
         }
 
@@ -104,11 +106,11 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    public void StartBattle(string[] enemiesToSpawn)
+    public void StartBattle(string[] enemiesToSpawn, bool canRunAway)
     {
         if (!isBattleActive)
         {
-
+            canRun = canRunAway;
             SettingUpBattle();
             AddingPlayers();
             AddingEnemies(enemiesToSpawn);
@@ -511,16 +513,21 @@ public class BattleManager : MonoBehaviour
 
     public void RunAway()
     {
-        if(Random.value > chanceToRunAway)
+        if (canRun)
         {
-            runningAway = true;
-            StartCoroutine(EndBattleCoroutine());
-        }
-        else
-        {
-            NextTurn();
-            battleNotice.SetText("There is no escape !");
-            battleNotice.Activate();
+            if (Random.value > chanceToRunAway)
+            {
+                runningAway = true;
+                StartCoroutine(EndBattleCoroutine());
+            }
+
+
+            else
+            {
+                NextTurn();
+                battleNotice.SetText("There is no escape !");
+                battleNotice.Activate();
+            }
         }
     }
 
