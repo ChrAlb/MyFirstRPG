@@ -20,9 +20,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScene.unity
     guid: 09e245ff9fe812a4fbcc6053028c8cbc
+  - enabled: 1
+    path: Assets/Scenes/Village-House1.unity
+    guid: 4ad97d87de9378e46aebf0350ca01557
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Village.unity
+    guid: 8ae25abc44d7b534195d89d69bdb8b6c
   - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 61e89dc7211e68f439239ac4d3dddd07
