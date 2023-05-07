@@ -8,12 +8,20 @@ public class AreaEnter : MonoBehaviour
     
     public string transitionAreaName;
     private string SceneName;
+    private int AnzahlItems;
+    private string ItemName;
+
+    private GameObject[] ItemsInScene;
+    string[] Liste;
+    int count = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+       
         if(transitionAreaName == Player.instance.transitionName)
         {
+            LoadActiveItemsinScene();
             Player.instance.transform.position = transform.position;
         }
     }
@@ -29,33 +37,42 @@ public class AreaEnter : MonoBehaviour
         if (PlayerPrefs.HasKey("Szene_" + SceneManager.GetActiveScene().buildIndex))
         {
             SceneName = PlayerPrefs.GetString("Szene_" + SceneManager.GetActiveScene().buildIndex);
-            
+            ItemsInScene = GameObject.FindGameObjectsWithTag("Item");
+            AnzahlItems = PlayerPrefs.GetInt("AnzahlItems_" + SceneName);
 
-        }
-       
+            
+            for (int j = 0; j < AnzahlItems; j++)
+            {
+                ItemName = PlayerPrefs.GetString("Item_" + SceneName + j);
+                Liste[count] = ItemName;
+                count++;
+                
+            }
+
+            for (int i = 0; i < ItemsInScene.Length; i++)
+            {
+                if (!InSafedItems(ItemsInScene[i].name))
+                {
+                    ItemsInScene[i].SetActive(false);
+                }  
+            }
+        }       
     }
+
+    private bool InSafedItems(string item)
+    {
+        for (int i = 0; i < Liste.Length; i++)
+        {
+            if (Liste[i] == item)
+            {
+                return true;
+            }
+            
+            
+        }
+        return false;
+    }
+
+   
 }
 
-/*
-private void SaveActiveItemsinScene()
-{
-    PlayerPrefs.SetString("Szene_" + SceneManager.GetActiveScene().buildIndex, SceneManager.GetActiveScene().name);
-
-    ActiveItemsinScene = GameObject.FindGameObjectsWithTag("Item");
-    for (int i = 0; i < ActiveItemsinScene.Length; i++)
-    {
-        if (ActiveItemsinScene[i].activeInHierarchy)
-        {
-            PlayerPrefs.SetString("Item_" + ActiveItemsinScene[i], ActiveItemsinScene[i].name);
-
-            PlayerPrefs.SetFloat("Item_Pos_X" + ActiveItemsinScene[i], ActiveItemsinScene[i].transform.position.x);
-            PlayerPrefs.SetFloat("Item_Pos_Y" + ActiveItemsinScene[i], ActiveItemsinScene[i].transform.position.y);
-            PlayerPrefs.SetFloat("Item_Pos_Z" + ActiveItemsinScene[i], ActiveItemsinScene[i].transform.position.z);
-            print(ActiveItemsinScene[i].name);
-            print(ActiveItemsinScene[i].transform.position.x);
-            print(ActiveItemsinScene[i].transform.position.y);
-            print(ActiveItemsinScene[i].transform.position.z);
-        }
-    }
-
-}*/
