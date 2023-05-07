@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 399184402}
   m_Layer: 0
   m_Name: HP potion (2)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 964950429}
   m_Layer: 0
   m_Name: Mana Potion (2)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3098,7 +3098,7 @@ GameObject:
   - component: {fileID: 1515094275}
   m_Layer: 0
   m_Name: Mana Potion (1)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3307,7 +3307,7 @@ GameObject:
   - component: {fileID: 1938238919}
   m_Layer: 0
   m_Name: HP potion (1)
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3615,6 +3615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HP potion
       objectReference: {fileID: 0}
+    - target: {fileID: 3073927062769135980, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 3073927062769135981, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3855,11 +3859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733191, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7868861
+      value: 3.778357
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733191, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0444599
+      value: -1.1153225
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733191, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3957,6 +3961,10 @@ PrefabInstance:
     - target: {fileID: 5249752399281744639, guid: b7a52a3bd44174c4ea7b4526b14f9f31, type: 3}
       propertyPath: m_Name
       value: sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249752399281744639, guid: b7a52a3bd44174c4ea7b4526b14f9f31, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7a52a3bd44174c4ea7b4526b14f9f31, type: 3}
@@ -4072,6 +4080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mana Potion
       objectReference: {fileID: 0}
+    - target: {fileID: 6207164500207678045, guid: 027c687617b2a504680c1671c80c5417, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 027c687617b2a504680c1671c80c5417, type: 3}
 --- !u!1001 &7078068903038084344
@@ -4186,6 +4198,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: axe
       objectReference: {fileID: 0}
+    - target: {fileID: 7412053385244814430, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
 --- !u!1001 &8738096407264425173
@@ -4255,6 +4271,10 @@ PrefabInstance:
     - target: {fileID: 9047609241274822484, guid: a3a23538bb4ab674fa605891a8c3e9d2, type: 3}
       propertyPath: m_Name
       value: armor
+      objectReference: {fileID: 0}
+    - target: {fileID: 9047609241274822484, guid: a3a23538bb4ab674fa605891a8c3e9d2, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 9047609241274822491, guid: a3a23538bb4ab674fa605891a8c3e9d2, type: 3}
       propertyPath: m_RootOrder

@@ -12,8 +12,7 @@ public class AreaEnter : MonoBehaviour
     private string ItemName;
 
     private GameObject[] ItemsInScene;
-    string[] Liste;
-    int count = 0;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +39,14 @@ public class AreaEnter : MonoBehaviour
             ItemsInScene = GameObject.FindGameObjectsWithTag("Item");
             AnzahlItems = PlayerPrefs.GetInt("AnzahlItems_" + SceneName);
 
-            
+            /*
             for (int j = 0; j < AnzahlItems; j++)
             {
                 ItemName = PlayerPrefs.GetString("Item_" + SceneName + j);
-                Liste[count] = ItemName;
+                SavedItems[count] = ItemName;
                 count++;
                 
-            }
+            }*/
 
             for (int i = 0; i < ItemsInScene.Length; i++)
             {
@@ -61,14 +60,13 @@ public class AreaEnter : MonoBehaviour
 
     private bool InSafedItems(string item)
     {
-        for (int i = 0; i < Liste.Length; i++)
+        for (int i = 0; i < AnzahlItems; i++)
         {
-            if (Liste[i] == item)
+            if (PlayerPrefs.GetString("Item_" + SceneName + i) == item)
             {
                 return true;
             }
-            
-            
+              
         }
         return false;
     }

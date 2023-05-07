@@ -402,6 +402,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: armor
       objectReference: {fileID: 0}
+    - target: {fileID: 9047609241274822484, guid: a3a23538bb4ab674fa605891a8c3e9d2, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     - target: {fileID: 9047609241274822491, guid: a3a23538bb4ab674fa605891a8c3e9d2, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -586,11 +590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733191, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.194136
+      value: -4.3
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910408733191, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.18359998
+      value: 0.34
       objectReference: {fileID: 0}
     - target: {fileID: 5147148910900720472, guid: 1754a56106653ce44b65e40561380fe3, type: 3}
       propertyPath: m_Follow
@@ -892,6 +896,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: axe
       objectReference: {fileID: 0}
+    - target: {fileID: 7412053385244814430, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecd37d46e0e07ed4788625ee7fb969d6, type: 3}
 --- !u!1 &673632212
@@ -1039,6 +1047,10 @@ PrefabInstance:
     - target: {fileID: 3073927062769135980, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
       propertyPath: m_Name
       value: HP potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 3073927062769135980, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 3073927062769135981, guid: ec0fa1c6908626d49b15cdeecd2c6bb2, type: 3}
       propertyPath: m_RootOrder
@@ -2265,6 +2277,10 @@ PrefabInstance:
     - target: {fileID: 6207164500207678045, guid: 027c687617b2a504680c1671c80c5417, type: 3}
       propertyPath: m_Name
       value: Mana Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 6207164500207678045, guid: 027c687617b2a504680c1671c80c5417, type: 3}
+      propertyPath: m_TagString
+      value: Item
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 027c687617b2a504680c1671c80c5417, type: 3}
